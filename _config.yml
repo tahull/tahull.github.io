@@ -1,1 +1,26 @@
-theme: jekyll-theme-cayman
+---
+title: tah projects
+description: microcontroller shenanigans
+baseurl: ""
+url: "https://tah83.github.io"
+#github_username:
+
+# Build settings
+markdown: kramdown
+#plugins:
+#  - jekyll-feed
+# Custom
+github_repo: https://github.com/tah83
+current_version:      0.0.1
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
