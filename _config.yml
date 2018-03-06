@@ -7,6 +7,8 @@ url: "https://tah83.github.io"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+
 #plugins:
 #  - jekyll-feed
 # Custom
