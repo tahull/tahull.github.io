@@ -1,0 +1,21 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  {% seo %}
+
+  <title>
+    {%- if page.title -%}
+      {{ page.title | smartify }} · {{ site.title | smartify }}
+    {%- else -%}
+      {{ site.title | smartify }} · {{ site.description | smartify }}
+    {%- endif -%}
+  </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ site.baseurl }}/dist/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{ site.baseurl }}/css/custom.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
+</head>
