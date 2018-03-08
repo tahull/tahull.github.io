@@ -3,3 +3,13 @@ layout: home
 title: home
 description: nothing to see here
 ---
+
+{{ site.github.repository_url }}
+{{ site.github.hostname }}
+{{ site.github.pages_hostname}}
+{{ site.github.repository_name }}
+{{ site.title | default: site.github.repository_name }}
+
+{% for repository in site.github.public_repositories %}
+  * [{{ repository.name }}]({{ repository.html_url }})
+{% endfor %}
