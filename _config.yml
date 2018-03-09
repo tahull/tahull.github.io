@@ -16,7 +16,7 @@ plugins:
   - jekyll-github-metadata
 
 # Custom
-current_version:      0.0.2
+current_version:      0.0.25
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
