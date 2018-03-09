@@ -1,8 +1,9 @@
 ---
-title: tah projects
-description: microcontroller shenanigans
+title: microcontroller projects
+description: projects with PIC microcontrollers
 baseurl: ""
 url: "https://tah83.github.io"
+repository: tah83/tah83.github.io
 #github_username:
 
 # Build settings
@@ -12,8 +13,9 @@ highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-github-metadata
+
 # Custom
-github_repo: https://github.com/tah83
 current_version:      0.0.2
 
 # Exclude from processing.

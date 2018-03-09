@@ -45,5 +45,10 @@ layout: default
 
 <!--TODO generate tree list or table of projects -->
 <div class="container">
+
+  {% for repository in site.github.public_repositories %}
+    <h3><a href="{{ repository.html_url }}">{{ repository.name  }}</a></h3>
+  {% endfor %}
+
   {{ content }}
 </div>

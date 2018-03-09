@@ -18,7 +18,7 @@ footer {
 .jumbotron-cover{
     color:#fff;
     text-align: center;
-    background: url("http://placehold.it/1900x1080");
+    background: url(/images/cover.jpg);
     background-size: cover;
     background-position: center;
     height: 400px;

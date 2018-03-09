@@ -19,6 +19,8 @@ gem 'github-pages', '~> 177'
 
 gem 'html-proofer'
 
+gem "jekyll-github-metadata"
+
 
 # If you have any plugins, put them here!
 #group :jekyll_plugins do
