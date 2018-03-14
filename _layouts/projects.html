@@ -3,15 +3,77 @@ layout: default
 ---
 
 
+<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+  <ol class="carousel-indicators" style="bottom:-40px;">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox" style="width: 100%; min-height:250px; margin-bottom:50px;">
+    {% assign sorted = site.posts | where_exp:"post", "post.path contains 'projects'" %}
+    {% for post in sorted limit:4  %}
+      {% if forloop.index == 1%}
+        <div class="carousel-item active">
+      {% else %}
+        <div class="carousel-item">
+      {% endif %}
+      {% if post.featured-img %}
+        <img src="{{ post.featured-img }}" class="mr-3 mb-3" style="float:left; max-width:20rem;">
+      {% endif %}
+      <h2>{{post.title}}</h2>
+      {{ post.excerpt | truncate: 500}}
+      <a href="{{ post.url }}">Read the full post! &raquo</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 
-<!--TODO generate tree list or table of projects -->
-<div class="container">
-
+<!--TODO generate tree list or table of projects
+read md from project repo and import/embed it-->
+{% comment %}
   {% for repository in site.github.public_repositories %}
    {% if repository.name contains "projects" %}
     <h3><a href="{{ repository.html_url }}">{{ repository.name  }}</a></h3>
     {% endif %}
   {% endfor %}
+  <br>
+  time {{site.time}}
+{% endcomment %}
 
-  {{ content }}
-</div>
+{% comment %} order by project category, nills last {% endcomment %}
+{% assign projects = site.posts | sort: 'project-category', 'last' %}
+{% for post in projects  %}
+  {% comment %} ignore nills {% endcomment %}
+  {% if post.project-category %}
+    {% comment %} category found for the first time {% endcomment %}
+    {% if post.project-category != temp %}
+      <h4>{{post.project-category}} projects</h4>
+      <div class="row">
+        {% comment %} build card block of <project category> {% endcomment %}
+        {% assign sorted_projects = site.posts | where:"project-category",post.project-category %}
+        {% for project in sorted_projects %}
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 d-flex my-3">
+            <div class="card border-dark bg-info text-white" style="max-width: 20rem;" >
+              {% if project.featured-img %}
+                <img class="card-img" src="{{ project.featured-img }}" style=" object-fit: cover; height:100%;"></a>
+              {% else %}
+                <img class="card-img" src="http://placehold.it/350x250"></a>
+              {% endif %}
+              <a href="{{ project.url }}">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">{{project.title}}</h5>
+                  <h6>{{project.date | date: "%B %-d, %Y"}}</h6>
+                </div>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% assign temp = post.project-category %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+
+{{ content }}
