@@ -6,13 +6,20 @@ layout: default
   {{ content }}
 
   <!-- Display recent posts -->
+<h4> Posts </h4>
 <ul>
   {% for post in site.posts %}
     <li>
-      <div class="post-header">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      	<h4>{{post.date | date: "%B %-d, %Y"}}</h4>
-      	{{ post.excerpt | remove: '</p>' }} <a href="{{ post.url }}">Read the full post! &raquo</a>
+      <div class="post-header my-5" style="min-height:150px;">
+        <h5>
+          <a href="{{ post.url }} ">{{ post.title }}</a>
+          <small class="text-muted">{{post.date | date: "%B %-d, %Y"}}</small>
+        </h5>
+        {% if post.featured-img %}
+          <img src="{{ post.featured-img }}" class="mr-2" style="float:left; max-height:8rem; max-width:14rem;">
+        {% endif %}
+      	{{ post.excerpt | strip_html | truncate: 400 }}
+        <a href="{{ post.url }}">Read the full post! &raquo</a>
       </div>
     </li>
   {% endfor %}

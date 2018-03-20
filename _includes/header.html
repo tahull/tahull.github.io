@@ -2,12 +2,10 @@
   {% include navbar.html %}
 
   {% if page.layout == "home" %}
-    <header>
-      <div class="jumbotron jumbotron-cover">
-        <h1>{{ site.title }}</h1>
-        <p class="lead">{{ site.description }}</p>
-      </div>
-    </header>
+    <div class="jumbotron jumbotron-cover">
+      <h1>{{ site.title }}</h1>
+      <p class="lead">{{ site.description }}</p>
+    </div>
 
   {% elsif page.layout == "projects" %}
 
