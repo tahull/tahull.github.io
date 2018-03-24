@@ -3,27 +3,29 @@ layout: default
 ---
 
 
-<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+<div id="projectsCarousel" class="carousel slide my-4" data-ride="carousel">
   <ol class="carousel-indicators" style="bottom:-40px;">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#projectsCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#projectsCarousel" data-slide-to="1"></li>
+    <li data-target="#projectsCarousel" data-slide-to="2"></li>
+    <li data-target="#projectsCarousel" data-slide-to="3"></li>
   </ol>
   <div class="carousel-inner" role="listbox" style="width: 100%; min-height:250px; margin-bottom:50px;">
     {% assign sorted = site.posts | where_exp:"post", "post.path contains 'projects'" %}
     {% for post in sorted limit:4  %}
-      {% if forloop.index == 1%}
+      {% if forloop.index == 1 %}
       <div class="carousel-item active">
       {% else %}
       <div class="carousel-item">
       {% endif %}
-      {% if post.featured-img %}
-        <img src="{{ post.featured-img }}" class="mr-3 mb-3" style="float:left; max-height:14rem; max-width:20rem;">
-      {% endif %}
-        <h3>{{post.title}}</h3>
-      {{ post.excerpt | strip_html | truncate: 500}}
-        <a href="{{ post.url }}">Read the full post! &raquo</a>
+      <div class="recent-project-carousel my-2">
+        {% if post.featured-img %}
+          <img src="{{ post.featured-img }}" class="mr-3 mb-3" style="float:left; max-height:12rem; max-width:20rem;">
+        {% endif %}
+          <h3>{{post.title}}</h3>
+        {{ post.excerpt | strip_html | truncate: 500 }}
+          <a href="{{ post.url }}">Read the full post! &raquo</a>
+        </div>
       </div>
     {% endfor %}
   </div>

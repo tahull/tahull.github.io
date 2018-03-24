@@ -2,8 +2,9 @@
 layout: default
 ---
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
+{% comment %}
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -25,7 +26,27 @@ layout: default
   </ul>
 </nav>
 
-<h2>{{ page.title }}</h2>
-{{ content }}
 
-</body>
+<h1>{{ page.title }}</h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      {% include toc.html sanitize=true html=content h_min=2 h_max=2 class="navbar-nav" item_class="nav-item nav-link" %}
+</nav>
+
+{% endcomment %}
+<div data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ site.baseurl }}/projects.html">Projects</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#project-nav" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="project-nav">
+        {% include toc.html sanitize=true html=content h_min=2 h_max=2 class="navbar-nav.ml-auto" item_class="nav-item.nav-link" %}
+      </div>
+    </div>
+  </nav>
+
+
+  {{ content }}
+</div>

@@ -9,6 +9,7 @@ body {
   padding-top: 56px;
   padding-bottom: 20px;
   margin-bottom: 70px;
+  //border: 1px solid red;
 }
 
 footer {
@@ -18,8 +19,9 @@ footer {
   height: 70px;
 }
 
-.projects-scroll{
-  padding-top:20px;
+p, ul, .post-list, .recent-project-carousel{
+  overflow:auto;
+  //border: 1px solid red;
 }
 
 .jumbotron-cover{
@@ -29,4 +31,13 @@ footer {
     background-size: cover;
     background-position: center;
     height: 400px;
+}
+
+/* make room for the nav bar */
+h1[id],
+h2[id],
+h3[id],
+h4[id]{
+    padding-top: 70px;
+    margin-top: -70px;
 }

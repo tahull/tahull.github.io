@@ -8,7 +8,6 @@ project-source: https://github.com/tah83/LegoMicroMouse      # sources
 ---
 
 
-<div class="projects-scroll" id="intro" markdown="1">
 ---
 ## Introduction
 <img src="{{ page.featured-img }}" class="img-fluid" class="mr-3" style="float:left; max-width:15rem;"/>
@@ -17,28 +16,18 @@ A micro-mouse is a robotic maze solver, like its flesh and blood counterpart a m
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lDM9-iq9xZ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-</div>
-
-<div class="projects-scroll" id="parts" markdown="1">
 ---
-## Parts:
+## Components
+### Parts
 - 3x Lego distance sensor
 - 2x Lego servo motors
 - Lego NXT brick
 - Various  Lego connectors to hold it all together
 
-## Software:
+### Software
 - NXC (not exactly C): A c-like programming language.
 
-</div>
 
-<div class="projects-scroll" id="schematic" markdown="1">
----
-## Schematic
-
-</div>
-
-<div class="projects-scroll" id="design" markdown="1">
 ---
 ## Hardware Design
 The goal of the hardware design is to allow the bot to move easily about in the maze. Easier said than done, I found that some of the servo motors weren't quite in sync and the bot would drift to one side. Using the OnFwdSync() from the nxc api can compensate somewhat for the drift by reading the rotation count from the servo motor encoders and attempting to keep the motors in sync. However, I noticed there was still some drift depending on the motor pairing. Luckily, in this class, there were enough Mindstorm kits for everyone and then some, thanks to the Chico State Computer Science department. I was able to find a motor pairing that closely operated at the same speed and power. Three distance Sensors were used to help determine if the bot was drifting to close to a wall, to far from a wall, if a wall was present in the maze and where. The distance sensors pointed forward, left and right.  For the rear of the bot I tried a few things- a sled, a free moving third wheel, and a ball (not part of the Mindstorm kit). The sled design occasionally got hung up on the board during turns, the free moving third wheel caused the bot to go in wrong directions during reverse maneuvers, the loosely held ball allowed for the least restrictive or interfering movements.
@@ -77,14 +66,10 @@ flood maze(){
     end loop
 end function
 ```
-<div class="projects-scroll" markdown="1">
-<img src="/images/projects/lego/mouse/lcd-display.png" class="img-fluid" style="float:right; max-width:15rem;"/>
-To help with debugging and making sure the bot was doing what I thought it should be doing, I made use of the LCD display on the brick. I used the api to draw lines for seen walls and displaying their cell values. This is the display after the maze has been explored (not the same maze configuration as in the first video). The starting position is noted with "S" the bots current position noted with "B" and the goal at the center has a value of 0.
-</div>
-</div>
 
-<div class="projects-scroll" id="sources" markdown="1">
+<img align="right" src="/images/projects/lego/mouse/lcd-display.png" class="img-fluid" style="max-height:10rem;"/>
+To help with debugging and making sure the bot was doing what I thought it should be doing, I made use of the LCD display on the brick. I used the api to draw lines for seen walls and displaying their cell values. This is the display after the maze has been explored (not the same maze configuration as in the first video). The starting position is noted with "S" the bots current position noted with "B" and the goal at the center has a value of 0.
+
 ---
 ## Source files
 <a href="{{ page.project-source }}">{{page.title}}</a>
-</div>

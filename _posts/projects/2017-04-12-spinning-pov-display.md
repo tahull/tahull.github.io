@@ -7,13 +7,10 @@ featured-img: /images/projects/pic/spinning-pov/cover.gif
 project-source: https://github.com/tah83/PIC-projects/tree/master/SpinningPOV.X
 ---
 
-<div id="intro" markdown="1" style="padding-top:20px;">
----
-<div markdown="1" style="min-height:200px;">
 ## Introduction
 <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>
 These things are fun to put together and interesting how a single line of LEDs moving fast enough, can trick our eyes into seeing more. This is the effect of Persistence Of Vision.
-</div>
+
 ----
 
 - Displaying RPM
@@ -24,16 +21,15 @@ These things are fun to put together and interesting how a single line of LEDs m
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vBU4JvQ9cXI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-</div>
 
-<div id="parts" markdown="1" style="padding-top:20px;">
 ---
-## Parts
+## Components
+### Hardware
 - 9v battery
 - LM7805 regulator
   - Provide a regulated 5v supply from 9v source for the components on the proto board. The LM78xx series indicates its 5v regulator by the 05 in its name, and has a ~2v drop out meaning, at least 7v source will be needed to get a regulated 5v output.
 - 47uF capacitor
-  - Bypass capacitor for 7805 regulator. For projects with low load demands a bypass capacitor probably isn't necessary, but I like to add them anyway.
+  - Bypass capacitor for 7805 regulator. For projects with low load demands a bypass capacitor probably isn't necessary, but add them anyway.
 - Switch
   - Simple switch to turn on/off this project.
 - PIC16F84A
@@ -62,54 +58,54 @@ These things are fun to put together and interesting how a single line of LEDs m
   - Project board with pre-drilled holes.
 - Project wood. Nuts & Bolts
   - A sturdy wood frame to hold the spinning display.
-</div>
 
-<div id="schematic" markdown="1" style="padding-top:20px;">
+### Software
+- MPLABX
+
 ---
 ## Schematic
 <img src="/images/projects/pic/spinning-pov/sch.png" class="img-fluid"/>
-</div>
 
-<div id="design" markdown="1" style="padding-top:20px;">
+
 ---
 ## Hardware Design
 ### 74LS373
-<img src="/images/projects/pic/spinning-pov/ls373tt.png" class="img-fluid" class="mr-3" style="float:right; max-width:15rem;"/>
-  - 74LS373 is eight d-latches.When output and latch is enabled, the logic level on the input side is latched to output side.
-  - Output enable (OE) (active low) is tied to ground, this will keep the output side of the latches active and will never go into a high impedance state. The LED's wont change until they're told to change.
-  - Latch enable (LE) is active high, and the latch enables for the two 74LS373's are controlled by two more IO pins on the micro controller. The micro controller can activate one latch and set one set of eight LED's, then switch to activate the next latch and set the next set of eight LED's with a different pattern, in effect, controlling 16 independent LED's with eight digital IO ports.
+- 74LS373 is eight d-latches.When output and latch is enabled, the logic level on the input side is latched to output side.
+<img src="/images/projects/pic/spinning-pov/ls373tt.png" class="img-fluid ml-3" style="float:right; max-width:15rem;"/>
+- Output enable (OE) (active low) is tied to ground, this will keep the output side of the latches active and will never go into a high impedance state. The LED's wont change until they're told to change.
+- Latch enable (LE) is active high, and the latch enables for the two 74LS373's are controlled by two more IO pins on the micro controller. The micro controller can activate one latch and set one set of eight LED's, then switch to activate the next latch and set the next set of eight LED's with a different pattern, in effect, controlling 16 independent LED's with eight digital IO ports.
 
 
 ### Ir Emitter and photo transistor
 <img src="/images/projects/pic/spinning-pov/pov-side.png" class="img-fluid" style="float:right; max-width:15rem;"/>
 Ir emitter pictured, attached to frame. Ir emitter is powered by the fan dc power source, with a current limiting resistor that will be suitable depending on the voltage of the fans supply. Emitter and receiver need to have a meeting point, a point where the Ir emitter will be detected by the photo transistor.
 
-<div markdown="1" style="min-height:250px;">
+
 ### Balancing
 <img src="/images/projects/pic/spinning-pov/pov-front.png" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>
 Some balancing was needed. A piece of proto board with some washers taped to it worked. There was still some wobble to it, but much less than without a counter balance.
-</div>
+
 ---
 
 ## Software Design
 The software consists of a few components, interrupts for handling the start position and timer, in-line delay for creating the delay between degrees of rotation, and functions for displaying text/numbers on the spinning display.  
 ### Calculations
-#### Getting 1ms from from timer interrupt.
+#### Getting 1ms from from timer interrupt
 System clock is 20 MHz, one instruction takes 4 clock cycles, instruction clock is:
 
-`20MHz/4 = 200ns`
+\\[20MHz/4 = 200ns\\]
 
 With prescaler off one interrupt with this 8-bit timer will take:
 
-`256*200ns = 51.2us`
+\\[256*200ns = 51.2us\\]
 
 50us would be easier to work with so:
 
-`50us/200ns = 250`
+\\[50us/200ns = 250\\]
 
 So timer reload value should be:
 
-`256-250 = 6`
+\\[256-250 = 6\\]
 
 Then to get a 1ms counter, count up to 20 timer 0 interrupts.
 
@@ -127,15 +123,15 @@ void interrupt isr(){
 }
 ```
 
-#### RPM calculation.
+#### RPM calculation
 Knowing there's 60,000 milliseconds in a minute we can get the expected number of rotations in a minute. And thus the spinning device can determine its own RPM. For my system, I'm expecting the voltage or RPM to vary, and so I have the microprocessor determine how long the delay should be between setting LED's.
 
 `rpm = 60000/time of one rotation in ms`
 
-#### Delay per degree.
+#### Delay per degree
 We need to know how long one rotation takes, if we know the RPM then:
 
-`Time of one rotation in milliseconds = 60000/RPM`
+`Time of one rotation in ms = 60000/RPM`
 
 Or if using a millisecond counter we can easily know how long one rotation takes, then its just a matter of determining how long one degree is. In terms of micro seconds:
 
@@ -143,15 +139,15 @@ Or if using a millisecond counter we can easily know how long one rotation takes
 
 if RPM is 2700:
 
-`1000*(60000/2700) / 360 = 61.7 us`
+\\[ 1000*(60000/2700) / 360 = 61.7 us \\]
 
 Knowing how long one degree is, we can decide how long of a delay to create between setting LED's. One instruction is 200ns, and an in-line delay loop will take several instructions. one loop of a delay will take:
 
-`7*200ns = 1.4us`
+\\[7*200ns = 1.4us\\]
 
 So to create a 61us delay:
 
-`61/1.4 ~ 43 cycles in a delay loop`
+\\[61/1.4 = 43\\]
 
 ```c
 void delay(){
@@ -176,7 +172,7 @@ delay_per_degree = (277u*ms_counter)/200u;
 Two interrupts are used, timer 0 and external interrupt pin.
 #### Timer
 The timer is used to count milliseconds which in turn can give seconds, minutes hours, and also used in determine RPM and delay between displaying to LED's
-#### Interrupt on edge.
+#### Interrupt on edge
 The int pin is used for finding the start point in rotation. When the Ir Emitter and photo transistor cross paths, the photo transistor will react to the Ir and pull the signal line low, causing the interrupt on edge to trigger.
 Display
 The two 373 Latches make it possible to control 16 LED's with an 8 pins. The display function takes value for writing to port pins, then sends a signal to one or both latches to to tell them to accept the value.
@@ -203,10 +199,7 @@ void set_leds(uint8_t leds,uint8_t section){
     }
 }
 ```
-</div>
 
-<div id="sources" markdown="1" style="padding-top:20px;">
 ---
 ## Source files
 <a href="{{ page.project-source }}">Seven Seg RTC</a>
-</div>
