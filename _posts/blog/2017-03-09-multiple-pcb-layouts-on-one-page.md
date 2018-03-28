@@ -5,15 +5,15 @@ permalink: /tips&tricks/:year/:month/:title:output_ext
 ---
 
 
-If you're like me and want to get multiple pcb layers on one printout rather than one per page. Here's a simple method to achieve that.
+If you're like me and want to get multiple PCB layers on one printout rather than one per page. Here's a simple method to achieve that.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U1sPeEALW9o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ---
 ## Procedure
-When exporting to an image file, its possible that the dimensions may be changed which will give an inaccurate pcb. Also image printing default settings seem to like the "fit to page" option. Whatever image editing software is used, you may need to check that it doesn't modify the size of the image when printing.
+When exporting to an image file, its possible that the dimensions may be changed which will give an inaccurate PCB. Also image printing default settings seem to like the "fit to page" option. Whatever image editing software is used, you may need to check that it doesn't modify the size of the image when printing.
 
-I'm using Eagle Cad and MS Paint. Eagle allows exporting to an image with a set dpi. The dots per inch needs to be consistent between the different images. When exporting as an image, eagle includes extra information like pad names, signal trace names which we don't need in the image, and may cause problems with the pcb, so its a good idea to turn these off. To disable those in eagle select the Options -> Set... go to the Misc tab and uncheck Display pad names, Display Signal names on pads, and Display signal names on traces . When the pcb is ready to be printed:
+I'm using Eagle Cad and MS Paint. Eagle allows exporting to an image with a set dpi. The dots per inch needs to be consistent between the different images. When exporting as an image, eagle includes extra information like pad names, signal trace names which we don't need in the image, and may cause problems with the PCB, so its a good idea to turn these off. To disable those in eagle select the Options -> Set... go to the Misc tab and uncheck Display pad names, Display Signal names on pads, and Display signal names on traces . When the PCB is ready to be printed:
 
 - Export to image. From Eagle file menu File -> Export -> image. Or use a script to automate the process. Here's my   script:
 

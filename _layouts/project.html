@@ -25,16 +25,10 @@ layout: default
 
   </ul>
 </nav>
-
-
-<h1>{{ page.title }}</h1>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-      {% include toc.html sanitize=true html=content h_min=2 h_max=2 class="navbar-nav" item_class="nav-item nav-link" %}
-</nav>
-
 {% endcomment %}
-<div data-spy="scroll" data-target=".navbar" data-offset="50">
 
+<div data-spy="scroll" data-target=".navbar" data-offset="50">
+  <h1>{{ page.title }}</h1>
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ site.baseurl }}/projects.html">Projects</a>

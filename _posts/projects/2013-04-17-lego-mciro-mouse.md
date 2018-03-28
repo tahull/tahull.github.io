@@ -7,8 +7,6 @@ featured-img: /images/projects/lego/mouse/cover.png        # featured image if a
 project-source: https://github.com/tah83/LegoMicroMouse      # sources
 ---
 
-
----
 ## Introduction
 <img src="{{ page.featured-img }}" class="img-fluid" class="mr-3" style="float:left; max-width:15rem;"/>
 This was an in-class project I had. The focus in this project was meant to be more on the flood fill algorithm than hardware design, so the Lego Mindstorm platform was provided in the class. The Lego Mindstorm platform is well suited for quickly creating hardware but with limited component choices. Simply choose from the available sensors, actuators, motors and snap them together in the desired configuration.
@@ -72,4 +70,6 @@ To help with debugging and making sure the bot was doing what I thought it shoul
 
 ---
 ## Source files
-<a href="{{ page.project-source }}">{{page.title}}</a>
+{% if page.project-source %}
+  <a href="{{ page.project-source }}">{{page.title}}</a>
+{% endif %}

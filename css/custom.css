@@ -18,7 +18,7 @@ footer {
   width: 100%;
   height: 70px;
 }
-
+/* room for paragraph/posts with inline images */
 p, ul, .post-list, .recent-project-carousel{
   overflow:auto;
   //border: 1px solid red;
@@ -33,11 +33,11 @@ p, ul, .post-list, .recent-project-carousel{
     height: 400px;
 }
 
-/* make room for the nav bar */
+/* room for navbar/toc */
 h1[id],
 h2[id],
 h3[id],
 h4[id]{
-    padding-top: 70px;
-    margin-top: -70px;
+    padding-top: 60px;
+    margin-top: -60px;
 }

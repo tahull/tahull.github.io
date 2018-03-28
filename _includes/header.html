@@ -1,14 +1,16 @@
 <header>
-  {% include navbar.html %}
+  {% case page.layout %}
+    {% when 'home' %}
+      {% include navbar.html %}
+      <div class="jumbotron jumbotron-cover">
+        <h1>{{ site.title }}</h1>
+        <p class="lead">{{ site.description }}</p>
+      </div>
 
-  {% if page.layout == "home" %}
-    <div class="jumbotron jumbotron-cover">
-      <h1>{{ site.title }}</h1>
-      <p class="lead">{{ site.description }}</p>
-    </div>
+    {% when 'projects' %}
+      {% include navbar.html %}
 
-  {% elsif page.layout == "projects" %}
-
-  {% endif %}
+    {% when 'project' %}
+  {% endcase %}
 
 </header>
