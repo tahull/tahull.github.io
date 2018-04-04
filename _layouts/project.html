@@ -36,7 +36,10 @@ layout: default
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="project-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item nav-link"><a href="#">{{ page.title }}</a></li>
         {% include toc.html sanitize=true html=content h_min=2 h_max=2 class="navbar-nav.ml-auto" item_class="nav-item.nav-link" %}
+        </ul>
       </div>
     </div>
   </nav>

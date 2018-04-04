@@ -1,7 +1,8 @@
 ---
 layout: project                               #file name: year-month-day-title.md
 categories:                                   # category
-permalink: /projects/:title:output_ext        # permalink if any
+tags:
+permalink: /projects/:categories/:title:output_ext        # permalink if any
 project-category:                          # project type/technology used
 featured-img:                                 # featured image if any
 schematic-img:
@@ -9,8 +10,6 @@ project-source:                               # sources
 ---
 
 
----
-## Introduction
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>{% endif %}
 
@@ -18,7 +17,7 @@ project-source:                               # sources
 ## Components
 ### Hardware
 
-### Software:
+### Software
 
 ---
 ## Schematic
@@ -27,9 +26,10 @@ project-source:                               # sources
 {% endif %}
 
 ---
-## Hardware Design
+## Design
+### Hardware
 
-### Software Design
+### Software
 
 ---
 ## Source files

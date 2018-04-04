@@ -1,13 +1,13 @@
 ---
 layout: project       #file name: year-month-day-title.md
-categories: micro-mouse flood-fill mindstorm
-permalink: /projects/:title:output_ext            # permalink if any
+categories: Mindstorm "micro mouse"
+tags: flood-fill Lego Mindstorm "micro mouse"
+permalink: /projects/lego/:title:output_ext            # permalink if any
 project-category: Lego     # category
 featured-img: /images/projects/lego/mouse/cover.png        # featured image if any
 project-source: https://github.com/tah83/LegoMicroMouse      # sources
 ---
 
-## Introduction
 <img src="{{ page.featured-img }}" class="img-fluid" class="mr-3" style="float:left; max-width:15rem;"/>
 This was an in-class project I had. The focus in this project was meant to be more on the flood fill algorithm than hardware design, so the Lego Mindstorm platform was provided in the class. The Lego Mindstorm platform is well suited for quickly creating hardware but with limited component choices. Simply choose from the available sensors, actuators, motors and snap them together in the desired configuration.
 A micro-mouse is a robotic maze solver, like its flesh and blood counterpart a mouse or rat in a maze. Instead of looking for food in the maze the robotic version searches for the goal, the center of the maze. A typical maze would be 16x16, but for the purposes of saving space, the class competition was held on a 5x5 maze. This project could be extended to a 16x16 maze by changing the #define MAZE_WIDTH and MAZE_HEIGHT to 16 and 16 respectively.
@@ -27,10 +27,11 @@ A micro-mouse is a robotic maze solver, like its flesh and blood counterpart a m
 
 
 ---
-## Hardware Design
+## Design
+### Hardware
 The goal of the hardware design is to allow the bot to move easily about in the maze. Easier said than done, I found that some of the servo motors weren't quite in sync and the bot would drift to one side. Using the OnFwdSync() from the nxc api can compensate somewhat for the drift by reading the rotation count from the servo motor encoders and attempting to keep the motors in sync. However, I noticed there was still some drift depending on the motor pairing. Luckily, in this class, there were enough Mindstorm kits for everyone and then some, thanks to the Chico State Computer Science department. I was able to find a motor pairing that closely operated at the same speed and power. Three distance Sensors were used to help determine if the bot was drifting to close to a wall, to far from a wall, if a wall was present in the maze and where. The distance sensors pointed forward, left and right.  For the rear of the bot I tried a few things- a sled, a free moving third wheel, and a ball (not part of the Mindstorm kit). The sled design occasionally got hung up on the board during turns, the free moving third wheel caused the bot to go in wrong directions during reverse maneuvers, the loosely held ball allowed for the least restrictive or interfering movements.
 
-### Software Design
+### Software
 The job of the software is to tell the bot how to move in the maze, and to find the shortest path to the goal in the maze. The bot needed constant adjustments while moving in the maze; a 90 degree turn wasn't always a perfect 90 degree turn. The bot needed to look at its surrounding and correct itself. Part of the code, more than initially anticipated, consisted of movement control and corrections; the rest was the implementation of the flood fill algorithm, loosely detailed below in pseudo code. The bot will attempt to move to the next cell with the significant value. The bot will move from high to low values, with the goal being 0. If its blocked by a wall or there is no next move it will re-flood the maze to get new values. As the algorithm name suggests, the maze is "flooded" with weighted values. Think of a bucket of water being dumped at one point in the maze. If the goal is the center, the bucket of water is dumped at the center. The center will have the most significant weighted value 0. As time increases, in this analogy, the water will hit the next accessible cell or cells (depending on known walls), those cells will be given a value of 1. Tick, the next cells the water hits get a value of 2, and so on. As the water traverses the maze, a shortest path to the goal will emerge. In that analogy, we would have an overhead view of the maze, we could see all the walls, but the bot doesn't. The bot only knows the walls around itself and the walls its already seen. So as the bot traverses the maze, discovering where the walls are, it needs to constantly re-flood the maze with values.
 
 pseudo code:

@@ -1,6 +1,7 @@
 ---
 layout: post
-categories: PlayOnLinux USB-To-Serial linux
+categories: linux
+tags: USB-To-Serial "Hercules terminal" USB-To-Serial
 permalink: /linux-sucks/:year/:month/:title:output_ext
 ---
 

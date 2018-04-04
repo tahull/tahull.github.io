@@ -1,14 +1,14 @@
 ---
 layout: project
-categories:
-permalink: /tips&tricks/:year/:month/:title:output_ext
-project-category: misc
-featured-img: /images/blog/tips&tricks/o-scope/cover.jpg  # featured image if any
-schematic-img: /images/blog/tips&tricks/o-scope/sch.png  
+categories: circuit
+tags: diode-limiter diode-clamp
+permalink: /projects/:title:output_ext
+project-category: Tips&Tricks
+featured-img: /images/projects/tips&tricks/o-scope/cover.jpg  # featured image if any
+schematic-img: /images/projects/tips&tricks/o-scope/sch.png  
 project-source:                               # sources
 ---
 
-## Introduction
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>{% endif %}
 An oscilloscope is a valuable piece of test equipment that can help in analyzing signals. It helps to be able to see what is happening with a signal in terms of voltage and time.
@@ -24,7 +24,7 @@ So... there's software that can allow a sound card to be used as an oscilloscope
 
 ### Software
 <a href="https://www.zeitnitz.eu/scope_en">Soundcard Oscilloscope</a>
-<img src="/images/blog/tips&tricks/o-scope/soundcard-scope-sw.png" class="img-fluid"/>
+<img src="/images/projects/tips&tricks/o-scope/soundcard-scope-sw.png" class="img-fluid"/>
 
 And here's some more sound card oscilloscope options:     
 <a href="http://www.zen22142.zen.co.uk/Prac/winscope.htm">Winscope</a>   
@@ -37,12 +37,13 @@ And here's some more sound card oscilloscope options:
 {% endif %}
 
 ---
-## Hardware Design
+## Design
+### Hardware
 This hardware design is adapted from
 <a href="http://homediyelectronics.com/projects/howtomakeafreesoundcardpcoscilloscope/">Steve Garratt</a> and his sound card oscilloscope. This is a simple hardware design that will help to keep a test signal in a safe range for the sound card.  A diode limiter circuit will clip the voltage at +.6v to -.6v. A notable word here is "clip" this signal in this simulation run is clipped, the signal above .6v and below -.6v is cut off.
 
-<img src="/images/blog/tips&tricks/o-scope/diode-limiter1.png" class="img-fluid"/>
+<img src="/images/projects/tips&tricks/o-scope/diode-limiter1.png" class="img-fluid"/>
 
 This is where the potentiometer comes in, to drop the signal voltage down to a range under the 600mv to -600mv.
 
-<img src="/images/blog/tips&tricks/o-scope/diode-limiter2.png" class="img-fluid"/>
+<img src="/images/projects/tips&tricks/o-scope/diode-limiter2.png" class="img-fluid"/>

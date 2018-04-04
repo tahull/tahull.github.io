@@ -1,15 +1,14 @@
 ---
 layout: project                               #file name: year-month-day-title.md
-categories: pcb "power supply" LM317T                                   # category
-permalink: /projects/:title:output_ext        # permalink if any
+categories: PCB "power supply"  
+tags: LM317T "breadboard power supply"                                # category
+permalink: /projects/pcb/:title:output_ext        # permalink if any
 project-category: PCB                         # project type/technology used
 featured-img: /images/projects/pcb/breadboard-ps/cover.png                                # featured image if any
 schematic-img: /images/projects/pcb/breadboard-ps/sch.png
 project-source: https://github.com/tah83/Eagle-projects/tree/master/breadboardpowersupply                              # sources
 ---
 
-
-## Introduction
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>{% endif %}
 A power supply is something every electronics project needs. To save time on prototyping a ready to go power supply is ideal. I wanted a supply that fits the breadboard nicely and can supply 3.3v or 5v.
@@ -51,7 +50,8 @@ I didn't get a good transfer, which left some breaks in the copper traces
 {% endif %}
 
 ---
-## Hardware Design
+## Design
+### Hardware
 I wanted to have a on/off switch, selectable 5V and 3.3V and wanted the PCB such that it wouldn't cover any of the breadboard area. I also wanted a probe point for checking current consumption (AOUT). LM317t regulator is adjustable between a wide voltage range.
 
 The datasheet recommends 240 ohm for R1 however different resistances can work too. R1 should be chosen such that it can handle the minimum load requirement between 3.5 mA and 10 mA to maintain regulation if there is a no load situation. In the case of this project there is always a load, the resistor and LED that meet the minimum load requirement. Secondly R1 should be chosen so that in conjunction with R2 (in my schematic R2 + R3 for 3.3v and R2+R3+R4+R5 for 5v) the expected Vout can be achieved.
