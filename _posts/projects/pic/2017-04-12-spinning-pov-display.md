@@ -5,7 +5,7 @@ tags: rpm pov "spinning display"
 permalink: /projects/pic/:title:output_ext
 project-category: PIC
 featured-img: /images/projects/pic/spinning-pov/cover.gif
-project-source: https://github.com/tah83/PIC-projects/tree/master/SpinningPOV.X
+project-source: https://github.com/tahull/PIC-projects/tree/master/SpinningPOV.X
 ---
 
 <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>

@@ -6,7 +6,7 @@ permalink: /projects/pcb/:title:output_ext        # permalink if any
 project-category: PCB                          # project type/technology used
 featured-img: /images/projects/pcb/usbb/cover.gif                                # featured image if any
 schematic-img:
-project-source: https://github.com/tah83/Eagle-projects/tree/master/usbbreakout                              # sources
+project-source: https://github.com/tahull/Eagle-projects/tree/master/usbbreakout                              # sources
 ---
 
 {% if page.featured-img %}

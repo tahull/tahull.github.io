@@ -5,7 +5,7 @@ tags: metronome
 permalink: /projects/pic/:title:output_ext        # permalink if any
 project-category: PIC                            # project type/technology used
 featured-img:                                 # featured image if any
-project-source: https://github.com/tah83/PIC-projects/tree/master/Metronome.X     # sources
+project-source: https://github.com/tahull/PIC-projects/tree/master/Metronome.X     # sources
 schematic-img: /images/projects/pic/metronome/sch.png
 ---
 

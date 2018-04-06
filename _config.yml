@@ -3,8 +3,8 @@ title: microcontroller projects
 description: > # this means to ignore newlines until "baseurl:"
   projects with PIC microcontrollers
 baseurl: ""
-url: "https://tah83.github.io"
-repository: tah83/tah83.github.io
+url: "https://tahull.github.io"
+repository: tahull/tahull.github.io
 #github_username:
 #excerpt_separator: "<!--more-->"
 

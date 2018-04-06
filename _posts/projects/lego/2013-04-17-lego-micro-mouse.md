@@ -5,7 +5,7 @@ tags: flood-fill Lego Mindstorm "micro mouse"
 permalink: /projects/lego/:title:output_ext            # permalink if any
 project-category: Lego     # category
 featured-img: /images/projects/lego/mouse/cover.png        # featured image if any
-project-source: https://github.com/tah83/LegoMicroMouse      # sources
+project-source: https://github.com/tahull/LegoMicroMouse      # sources
 ---
 
 <img src="{{ page.featured-img }}" class="img-fluid" class="mr-3" style="float:left; max-width:15rem;"/>

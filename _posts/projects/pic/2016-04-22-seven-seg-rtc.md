@@ -5,7 +5,7 @@ tags: rtc multiplex seven-seg-display pov display clock
 project-category: PIC
 permalink: /projects/pic/:title:output_ext
 featured-img: /images/projects/pic/rtc/cover.jpg
-project-source: https://github.com/tah83/PIC-projects/tree/master/Seven_Seg_RTC.X
+project-source: https://github.com/tahull/PIC-projects/tree/master/Seven_Seg_RTC.X
 ---
 
 <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>
