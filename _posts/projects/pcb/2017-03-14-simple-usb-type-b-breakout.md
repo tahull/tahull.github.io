@@ -4,7 +4,7 @@ categories: PCB breakout                                # category
 tags: usb "usb breakout"
 permalink: /projects/pcb/:title:output_ext        # permalink if any
 project-category: PCB                          # project type/technology used
-featured-img: /images/projects/pcb/usbb/cover.gif                                # featured image if any
+featured-img: /images/projects/pcb/usbb/cover.png                               # featured image if any
 schematic-img:
 project-source: https://github.com/tahull/Eagle-projects/tree/master/usbbreakout                              # sources
 ---
@@ -30,6 +30,7 @@ There's not a whole lot to this project. A easy way to get a USB connection from
 
 ---
 ## Design
+<img src="/images/projects/pcb/usbb/slide-show.gif" class="img-fluid"/>
 ### Hardware
 A jack, a double sided PCB, a breakout component is born.
 

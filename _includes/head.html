@@ -18,4 +18,8 @@
   <!-- Custom styles for this template -->
   <link href="{{ site.baseurl }}/css/custom.css" rel="stylesheet">
   <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
+
+  {% if page.use-math %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  {% endif %}
 </head>

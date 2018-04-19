@@ -15,7 +15,8 @@ schematic-img: /images/projects/pic/metronome/sch.png
  A metronome is a device used by musicians to assist with proper timing. A metronome produces regular ticks at a user selected beats per minute. The beats per minute for this project will vary between 30 to 140 (this range can be easily changed).
 
 ---
-## Parts:
+## Components
+### Hardware
 - PIC18f4320
 - Piezo PKM22EP sound component
 - 1x 330 ohm resistor
@@ -24,7 +25,7 @@ schematic-img: /images/projects/pic/metronome/sch.png
 - 1x NPN transistor
 - hd44780 LCD
 
-## Software
+### Software
 - Mplabx
 - XC8 c compiler
 

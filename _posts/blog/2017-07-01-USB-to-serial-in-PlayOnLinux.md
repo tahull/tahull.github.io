@@ -1,8 +1,8 @@
 ---
 layout: post
 categories: linux
-tags: USB-To-Serial "Hercules terminal" USB-To-Serial
-permalink: /linux-sucks/:year/:month/:title:output_ext
+tags: USB-To-Serial Hercules-terminal playOnLinux wine
+permalink: /:categories/:year/:month/:title:output_ext
 ---
 
 There's a serial terminal I like (hardware group's Hercules terminal), which as far as I know is only available for Windows. PlayOnLinux makes wine easy to use. Wine makes it possibly possible to run windows applications. Having setup the environment, the serial terminal application opens, but it cant open a com port, permission denied.

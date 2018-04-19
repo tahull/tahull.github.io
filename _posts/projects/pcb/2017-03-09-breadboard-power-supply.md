@@ -7,6 +7,7 @@ project-category: PCB                         # project type/technology used
 featured-img: /images/projects/pcb/breadboard-ps/cover.png                                # featured image if any
 schematic-img: /images/projects/pcb/breadboard-ps/sch.png
 project-source: https://github.com/tahull/Eagle-projects/tree/master/breadboardpowersupply                              # sources
+use-math: true
 ---
 
 {% if page.featured-img %}

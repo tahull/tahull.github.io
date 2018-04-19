@@ -1,8 +1,8 @@
 ---
 layout: post
-categories: pcb
+categories: tips&tricks
 tags: pcb-transfer "dual layer" "double sided"
-permalink: /tips&tricks/:year/:month/:title:output_ext
+permalink: /:categories/:year/:month/:title:output_ext
 ---
 
 

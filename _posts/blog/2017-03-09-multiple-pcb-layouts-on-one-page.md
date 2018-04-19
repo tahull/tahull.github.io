@@ -1,8 +1,8 @@
 ---
 layout: post
-categories: pcb
+categories: tips&tricks
 tags: pcb-transfer "pcb printout" "save paper"
-permalink: /tips&tricks/:year/:month/:title:output_ext
+permalink: /:categories/:year/:month/:title:output_ext
 ---
 
 

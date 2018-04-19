@@ -4,11 +4,13 @@ categories: PIC
 tags: rpm pov "spinning display"
 permalink: /projects/pic/:title:output_ext
 project-category: PIC
-featured-img: /images/projects/pic/spinning-pov/cover.gif
+featured-img: /images/projects/pic/spinning-pov/cover.jpg
 project-source: https://github.com/tahull/PIC-projects/tree/master/SpinningPOV.X
+use-math: true
 ---
 
-<img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>
+{% if page.featured-img %}
+  <img src="{{ page.featured-img }}" class="img-fluid mr-3" width="300" align="left"/>{% endif %}
 These things are fun to put together and interesting how a single line of LEDs moving fast enough, can trick our eyes into seeing more. This is the effect of Persistence Of Vision.
 
 ----
@@ -66,9 +68,9 @@ These things are fun to put together and interesting how a single line of LEDs m
 ## Schematic
 <img src="/images/projects/pic/spinning-pov/sch.png" class="img-fluid"/>
 
-
 ---
 ## Design
+<img src="/images/projects/pic/spinning-pov/slide-show.gif" class="img-fluid"/>
 ### Hardware
 #### 74LS373
 - 74LS373 is eight d-latches.When output and latch is enabled, the logic level on the input side is latched to output side.

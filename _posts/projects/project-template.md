@@ -7,6 +7,7 @@ project-category:                          # project type/technology used
 featured-img:                                 # featured image if any
 schematic-img:
 project-source:                               # sources
+use-math: false
 ---
 
 

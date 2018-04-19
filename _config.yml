@@ -1,7 +1,7 @@
 ---
-title: microcontroller projects
+title: tahull
 description: > # this means to ignore newlines until "baseurl:"
-  projects with PIC microcontrollers
+  projects with microcontrollers
 baseurl: ""
 url: "https://tahull.github.io"
 repository: tahull/tahull.github.io
