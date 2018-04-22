@@ -4,7 +4,8 @@ categories: PIC
 tags: rpm pov "spinning display"
 permalink: /projects/pic/:title:output_ext
 project-category: PIC
-featured-img: /images/projects/pic/spinning-pov/cover.jpg
+hero-img: /images/projects/pic/spinning-pov/cover.jpg
+featured-img: /images/projects/pic/spinning-pov/feature.jpg
 project-source: https://github.com/tahull/PIC-projects/tree/master/SpinningPOV.X
 use-math: true
 ---

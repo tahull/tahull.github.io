@@ -2,9 +2,10 @@
 layout: project
 categories: circuit
 tags: diode-limiter diode-clamp
-permalink: /projects/:title:output_ext
-project-category: Tips&Tricks
-featured-img: /images/projects/tips&tricks/o-scope/cover.jpg  # featured image if any
+permalink: /projects/tips&tricks/:title:output_ext
+project-category: tips&tricks
+hero-img: /images/projects/tips&tricks/o-scope/cover.jpg
+featured-img: /images/projects/tips&tricks/o-scope/feature.jpg  # featured image if any
 schematic-img: /images/projects/tips&tricks/o-scope/sch.png  
 project-source:                               # sources
 ---

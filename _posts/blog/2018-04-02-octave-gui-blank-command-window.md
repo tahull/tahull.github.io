@@ -3,7 +3,8 @@ layout: post
 categories: octave
 tags: octave linux
 permalink: /:categories/:year/:month/:title:output_ext
-featured-img: /images/blog/octave/blank-command.png
+hero-img: /images/blog/octave/blank-command.png
+featured-img: /images/blog/octave/feature.png
 ---
 
 {% if page.featured-img %}

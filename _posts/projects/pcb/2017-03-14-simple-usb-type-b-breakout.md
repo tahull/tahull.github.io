@@ -4,7 +4,8 @@ categories: PCB breakout                                # category
 tags: usb "usb breakout"
 permalink: /projects/pcb/:title:output_ext        # permalink if any
 project-category: PCB                          # project type/technology used
-featured-img: /images/projects/pcb/usbb/cover.png                               # featured image if any
+hero-img: /images/projects/pcb/usbb/cover.png   
+featured-img: /images/projects/pcb/usbb/feature.png                               # featured image if any
 schematic-img:
 project-source: https://github.com/tahull/Eagle-projects/tree/master/usbbreakout                              # sources
 ---

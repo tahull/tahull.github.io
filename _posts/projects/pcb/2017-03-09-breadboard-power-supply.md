@@ -4,7 +4,8 @@ categories: PCB "power supply"
 tags: LM317T "breadboard power supply"                                # category
 permalink: /projects/pcb/:title:output_ext        # permalink if any
 project-category: PCB                         # project type/technology used
-featured-img: /images/projects/pcb/breadboard-ps/cover.png                                # featured image if any
+hero-img: /images/projects/pcb/breadboard-ps/cover.png
+featured-img: /images/projects/pcb/breadboard-ps/feature.png                                # featured image if any
 schematic-img: /images/projects/pcb/breadboard-ps/sch.png
 project-source: https://github.com/tahull/Eagle-projects/tree/master/breadboardpowersupply                              # sources
 use-math: true
