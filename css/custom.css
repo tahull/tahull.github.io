@@ -37,8 +37,8 @@ footer {
 }
 .post-list img{
   float:left;
-  max-height:10rem;
-  max-width:15rem;
+  /*max-height:10rem;*/
+  max-width:10rem;
   /*border: 1px solid red;*/
 }
 

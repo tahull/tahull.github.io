@@ -4,7 +4,7 @@ categories: openocd
 tags: openocd ti icdi jtag windows
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img:
-featured-img: /images/blog/openocd/ti-icdi-success.png
+featured-img: /images/blog/openocd/ti-icdi-feature.jpg
 ---
 
 Ideally OpenOCD should work with ICDI out of the box, in my case it didn't. OpenOCD uses libusb and the TI ICDI driver uses winusb. libusb can talk to winusb, so there should be no need to use the Zadig tool to modify the ICDI jtag/swd interface. However, OpenOCD fails to open the interface and results with the error: `Error: open failed`

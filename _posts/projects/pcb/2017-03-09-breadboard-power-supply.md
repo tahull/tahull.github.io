@@ -4,7 +4,7 @@ categories: PCB "power supply"
 tags: LM317T "breadboard power supply"                                # category
 permalink: /projects/pcb/:title:output_ext        # permalink if any
 project-category: PCB                         # project type/technology used
-hero-img: /images/projects/pcb/breadboard-ps/cover.png
+hero-img: /images/projects/pcb/breadboard-ps/hero.jpg
 featured-img: /images/projects/pcb/breadboard-ps/feature.png                                # featured image if any
 schematic-img: /images/projects/pcb/breadboard-ps/sch.png
 project-source: https://github.com/tahull/Eagle-projects/tree/master/breadboardpowersupply                              # sources
@@ -12,7 +12,7 @@ use-math: true
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>{% endif %}
+  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
 A power supply is something every electronics project needs. To save time on prototyping a ready to go power supply is ideal. I wanted a supply that fits the breadboard nicely and can supply 3.3v or 5v.
 In this project a few things went wrong.
 

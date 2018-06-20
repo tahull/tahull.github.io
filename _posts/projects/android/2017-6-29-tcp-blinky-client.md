@@ -3,11 +3,11 @@ layout: project                               #file name: year-month-day-title.m
 categories: android-apps                                   # category
 tags:
 permalink: /projects/android/:title:output_ext        # permalink if any
-project-category: android                         # project type/technology used
-hero-img: /images/projects/android/tcp-blinky-client/hero.jpg
+project-category: Android                         # project type/technology used
+hero-img: /images/projects/android/tcp-blinky-client/hero.png
 featured-img: /images/projects/android/tcp-blinky-client/feature.png        # featured image if any
 schematic-img:
-project-source: https://github.com/tahull/Android-projects/tree/master/TCP-Blinky                               # sources
+project-source: https://github.com/tahull/Android-projects/tree/master/TCP-Blinky     # sources
 use-math: false
 ---
 

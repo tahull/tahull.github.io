@@ -1,17 +1,17 @@
 ---
 layout: project
 categories: PIC
-tags: rpm pov "spinning display"
+tags: rpm pov led-display spinning-display
 permalink: /projects/pic/:title:output_ext
 project-category: PIC
-hero-img: /images/projects/pic/spinning-pov/cover.jpg
+hero-img: /images/projects/pic/spinning-pov/hero.jpg
 featured-img: /images/projects/pic/spinning-pov/feature.jpg
 project-source: https://github.com/tahull/PIC-projects/tree/master/SpinningPOV.X
 use-math: true
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" width="300" align="left"/>{% endif %}
+  <img src="{{ page.featured-img }}" class="img-fluid mr-3" align="left"/>{% endif %}
 These things are fun to put together and interesting how a single line of LEDs moving fast enough, can trick our eyes into seeing more. This is the effect of Persistence Of Vision.
 
 ----
@@ -75,18 +75,18 @@ These things are fun to put together and interesting how a single line of LEDs m
 ### Hardware
 #### 74LS373
 - 74LS373 is eight d-latches.When output and latch is enabled, the logic level on the input side is latched to output side.
-<img src="/images/projects/pic/spinning-pov/ls373tt.png" class="img-fluid ml-3" style="float:right; max-width:15rem;"/>
+<img src="/images/projects/pic/spinning-pov/ls373tt.png" class="img-fluid ml-3" style="float:right;"/>
 - Output enable (OE) (active low) is tied to ground, this will keep the output side of the latches active and will never go into a high impedance state. The LED's wont change until they're told to change.
 - Latch enable (LE) is active high, and the latch enables for the two 74LS373's are controlled by two more IO pins on the micro controller. The micro controller can activate one latch and set one set of eight LED's, then switch to activate the next latch and set the next set of eight LED's with a different pattern, in effect, controlling 16 independent LED's with eight digital IO ports.
 
 
 #### Ir Emitter and photo transistor
-<img src="/images/projects/pic/spinning-pov/pov-side.png" class="img-fluid" style="float:right; max-width:15rem;"/>
+<img src="/images/projects/pic/spinning-pov/pov-side.png" class="img-fluid" style="float:right;"/>
 Ir emitter pictured, attached to frame. Ir emitter is powered by the fan dc power source, with a current limiting resistor that will be suitable depending on the voltage of the fans supply. Emitter and receiver need to have a meeting point, a point where the Ir emitter will be detected by the photo transistor.
 
 
 #### Balancing
-<img src="/images/projects/pic/spinning-pov/pov-front.png" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>
+<img src="/images/projects/pic/spinning-pov/pov-front.png" class="img-fluid mr-3" style="float:left;"/>
 Some balancing was needed. A piece of proto board with some washers taped to it worked. There was still some wobble to it, but much less than without a counter balance.
 
 ---

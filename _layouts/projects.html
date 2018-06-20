@@ -2,7 +2,7 @@
 layout: default
 ---
 
-
+<h4>Recent Projects</h4>
 <div id="projectsCarousel" class="carousel slide my-4" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#projectsCarousel" data-slide-to="0" class="active"></li>
@@ -11,8 +11,11 @@ layout: default
     <li data-target="#projectsCarousel" data-slide-to="3"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
+    {% comment %}
     {% assign sorted = site.posts | where_exp:"post", "post.path contains 'projects'" %}
-    {% for post in sorted limit:4  %}
+    {% endcomment %}
+    {% assign projects = site.posts | where: "layout","project" %}
+    {% for post in projects limit:4  %}
       {% if forloop.index == 1 %}
       <div class="carousel-item active">
       {% else %}
@@ -43,16 +46,88 @@ read md from project repo and import/embed it-->
   time {{site.time}}
 {% endcomment %}
 
-{% comment %} order by project category, nills last {% endcomment %}
+{% comment %}
+{% for category in site.categories %}
+  <li><a name="{{ category | first }}">{{ category | first }}</a>
+    <ul>
+    {% for posts in category %}
+      {% for post in posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+{% endcomment %}
+
+<!-- list by date
+sort by project category that has a most recent project -->
+{% assign projects = site.posts | where: "layout","project" %}
+{% assign array_of_cats = ''|split:''%}
+{% for project in projects  %}
+
+  <!--if list size == 0
+    get first cap
+  else
+    compare current cat to list
+      if item found
+        add = false
+      else
+        add = true
+    if add == true
+      add this cat
+  -->
+  {% if array_of_cats.size == 0 %}
+    {% assign array_of_cats = array_of_cats|push:project.project-category%}
+  {% else %}
+    {% assign new_cat = true %}
+    {% for item in array_of_cats%}
+      {% if item == project.project-category %}
+        {% assign new_cat = false %}
+      {% endif %}
+    {% endfor %}
+    {% if new_cat == true %}
+      {% assign array_of_cats = array_of_cats|push:project.project-category%}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<!-- print project cards -->
+{% for category in array_of_cats %}
+  <h4>{{category}} projects</h4>
+  <div class="row">
+
+  {% assign projects = site.posts | where:"project-category",category %}
+  {% for project in projects  %}
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+      <div class="card border-dark bg-dark">
+        <a class="text-white" href="{{ project.url }}">
+        {% if project.featured-img %}
+          <img class="card-img" src="{{ project.featured-img }}">
+          <div class="card-img-overlay">
+        {% else %}
+          <div class="card-body">
+        {% endif %}
+            <h4 class="card-title"><small>{{project.title}}</small></h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}
+
+{% comment %}
+<!-- order by project category, nills last -->
 {% assign projects = site.posts | sort: 'project-category', 'last' %}
 {% for post in projects  %}
-  {% comment %} ignore nills {% endcomment %}
+  <!-- ignore nills -->
   {% if post.project-category %}
-    {% comment %} category found for the first time {% endcomment %}
+    <!-- category found for the first time -->
     {% if post.project-category != temp %}
       <h4>{{post.project-category}} projects</h4>
       <div class="row">
-        {% comment %} build card block of <project category> {% endcomment %}
+        <!-- build card block of <project category> -->
         {% assign sorted_projects = site.posts | where:"project-category",post.project-category %}
         {% for project in sorted_projects %}
           <div class="col-lg-3 col-md-4 col-sm-6 my-3">
@@ -75,6 +150,6 @@ read md from project repo and import/embed it-->
     {% endif %}
   {% endif %}
 {% endfor %}
-
+{% endcomment %}
 
 {{ content }}

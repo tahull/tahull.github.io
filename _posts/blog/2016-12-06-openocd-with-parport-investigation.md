@@ -4,7 +4,7 @@ categories: openocd
 tags: openocd parport jtag wiggler windows
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img:
-featured-img: /images/blog/openocd/parport-success.png
+featured-img: /images/blog/openocd/parport-feature.jpg
 ---
 
 Parallel ports aren't a popular port and so, don't have much support. A Windows driver giveio.sys was previously used on 32-bit Windows to support parallel port jtag device use with OpenOCD. There isn't a 64-bit version of giveio.sys. OpenOCD can't communicate with parallel port on a 64-bit windows OS using giveio.sys and results with an error: `Error: missing privileges for direct i/o`.

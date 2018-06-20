@@ -4,12 +4,12 @@ categories: Mindstorm "micro mouse"
 tags: flood-fill Lego Mindstorm "micro mouse"
 permalink: /projects/lego/:title:output_ext            # permalink if any
 project-category: Lego     # category
-hero-img: /images/projects/lego/mouse/cover.png
+hero-img: /images/projects/lego/mouse/hero.jpg
 featured-img: /images/projects/lego/mouse/feature.png        # featured image if any
 project-source: https://github.com/tahull/LegoMicroMouse      # sources
 ---
 
-<img src="{{ page.featured-img }}" class="img-fluid" class="mr-3" style="float:left; max-width:15rem;"/>
+<img src="{{ page.featured-img }}" class="img-fluid" class="mr-3" style="float:left;"/>
 This was an in-class project I had. The focus in this project was meant to be more on the flood fill algorithm than hardware design, so the Lego Mindstorm platform was provided in the class. The Lego Mindstorm platform is well suited for quickly creating hardware but with limited component choices. Simply choose from the available sensors, actuators, motors and snap them together in the desired configuration.
 A micro-mouse is a robotic maze solver, like its flesh and blood counterpart a mouse or rat in a maze. Instead of looking for food in the maze the robotic version searches for the goal, the center of the maze. A typical maze would be 16x16, but for the purposes of saving space, the class competition was held on a 5x5 maze. This project could be extended to a 16x16 maze by changing the #define MAZE_WIDTH and MAZE_HEIGHT to 16 and 16 respectively.
 
@@ -67,7 +67,7 @@ flood maze(){
 end function
 ```
 
-<img align="right" src="/images/projects/lego/mouse/lcd-display.png" class="img-fluid" style="max-height:10rem;"/>
+<img align="right" src="/images/projects/lego/mouse/lcd-display.png" class="img-fluid"/>
 To help with debugging and making sure the bot was doing what I thought it should be doing, I made use of the LCD display on the brick. I used the api to draw lines for seen walls and displaying their cell values. This is the display after the maze has been explored (not the same maze configuration as in the first video). The starting position is noted with "S" the bots current position noted with "B" and the goal at the center has a value of 0.
 
 ---

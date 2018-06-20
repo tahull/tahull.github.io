@@ -1,7 +1,7 @@
 ---
 title: tahull
 description: > # this means to ignore newlines until "baseurl:"
-  projects with microcontrollers
+  Amusement parks for electrons
 baseurl: ""
 url: "https://tahull.github.io"
 repository: tahull/tahull.github.io
@@ -18,7 +18,7 @@ plugins:
   - jekyll-github-metadata
 
 # Custom
-current_version:      0.0.58
+current_version:      0.0.59
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -3,15 +3,15 @@ layout: project
 categories: circuit
 tags: diode-limiter diode-clamp
 permalink: /projects/tips&tricks/:title:output_ext
-project-category: tips&tricks
-hero-img: /images/projects/tips&tricks/o-scope/cover.jpg
+project-category: Tips&Tricks
+hero-img: /images/projects/tips&tricks/o-scope/hero.jpg
 featured-img: /images/projects/tips&tricks/o-scope/feature.jpg  # featured image if any
 schematic-img: /images/projects/tips&tricks/o-scope/sch.png  
 project-source:                               # sources
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>{% endif %}
+  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
 An oscilloscope is a valuable piece of test equipment that can help in analyzing signals. It helps to be able to see what is happening with a signal in terms of voltage and time.
 A sound card's mic or line-in combined with oscilloscope software makes for a cheap piece of test equipment, but with some major shortcomings. A sound card is designed to work with frequency's in the audible range 20-20khz, sound cards do oversampling at 44khz or 96khz. Although to get enough sample points to get something view-able/useful with a sound card, the source signal will probably need to be around 20khz and under. Sound card's mic and line-in are made to connect with audio equipment, the interface isn't designed for high voltages, so to avoid damaging the interface , the signal needs to be conditioned. Oscilloscope software probably wont help with viewing voltage levels of a signal.
 So... there's software that can allow a sound card to be used as an oscilloscope, however it's only useful for small signals and low frequencies.
@@ -25,6 +25,7 @@ So... there's software that can allow a sound card to be used as an oscilloscope
 
 ### Software
 <a href="https://www.zeitnitz.eu/scope_en">Soundcard Oscilloscope</a>
+
 <img src="/images/projects/tips&tricks/o-scope/soundcard-scope-sw.png" class="img-fluid"/>
 
 And here's some more sound card oscilloscope options:     
