@@ -12,7 +12,8 @@ use-math: false
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>{% endif %}
+  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
+When it comes to text books or courses in embedded systems, digital system design, computer system architecture, CPLD, FPGA and so on..., at some point state machines will probably be discussed and re-discussed. You're likely to see or have seen a finite state machine example implementing a traffic light.
 
 
 ---

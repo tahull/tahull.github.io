@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: octave
+categories: linux-sucks
 tags: octave linux ubuntu16.04
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img: /images/blog/octave/blank-command.png

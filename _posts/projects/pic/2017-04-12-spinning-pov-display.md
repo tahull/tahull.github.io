@@ -94,7 +94,7 @@ Some balancing was needed. A piece of proto board with some washers taped to it 
 ### Software
 The software consists of a few components, interrupts for handling the start position and timer, in-line delay for creating the delay between degrees of rotation, and functions for displaying text/numbers on the spinning display.  
 ### Calculations
-#### Getting 1ms from from timer interrupt
+#### Getting 1ms from timer interrupt
 System clock is 20 MHz, one instruction takes 4 clock cycles, instruction clock is:
 
 \\[20MHz/4 = 200ns\\]

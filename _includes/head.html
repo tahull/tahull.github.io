@@ -16,8 +16,12 @@
   <link href="{{ site.baseurl }}/dist/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="{{ site.baseurl }}/css/custom.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
+  <link href="{{ "/css/custom.css" | relative_url }}" rel="stylesheet">
+  <link href="{{ "/css/syntax.css" | relative_url }}" rel="stylesheet">
+
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
 
   {% if page.use-math %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

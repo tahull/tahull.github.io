@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: linux
+categories: linux-sucks
 tags: USB-To-Serial Hercules-terminal playOnLinux wine
 permalink: /:categories/:year/:month/:title:output_ext
 ---

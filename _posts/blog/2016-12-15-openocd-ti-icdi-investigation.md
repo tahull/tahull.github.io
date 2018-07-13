@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: openocd
-tags: openocd ti icdi jtag windows
+tags: openocd ti-icdi jtag windows
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img:
 featured-img: /images/blog/openocd/ti-icdi-feature.jpg
@@ -11,7 +11,7 @@ Ideally OpenOCD should work with ICDI out of the box, in my case it didn't. Open
 
 The Texas Instruments ICDI, comes as a Composite USB device with a virtual com port, a Device Firmware Upgrade and a device debug interface (for Tiva C Series TM4C123 Launchpad). Under Windows 10 64-bit, OpenOCD will fail to connect to the debug interface.
 
-Uninstalling the virtual com port seems to allow OpenOCD to open the ICDI interface, or using [Zadig](http://zadig.akeo.ie/) and changing the composite device host to use winusb or libusb libs is another solution. However, changing the composite host will effect the other interfaces, they will no longer show up in the device list and may be unreachable (no more VCP, no more DFU, no more JTAG) and this modification may prevent other debuggers or flash programmers from working. To revert the change the modified composite host driver needs to be removed and TI ICDI driver re-installed.
+Uninstalling the virtual com port seems to allow OpenOCD to open the ICDI interface, or using [Zadig](http://zadig.akeo.ie/) and changing the composite device host to use winusb or libusb libs is another solution. However, changing the composite host will affect the other interfaces, they will no longer show up in the device list and may be unreachable (no more VCP, no more DFU, no more JTAG) and this modification may prevent other debuggers or flash programmers from working. To revert the change the modified composite host driver needs to be removed and TI ICDI driver re-installed.
 
 Either wipe out your VCP (no virtual com port for debug messages) or modify the composite host, these two options aren't very appealing. These work-around options didn't appeal to me, so I tried to figure out why OpenOCD was failing to open the interface.
 
@@ -30,7 +30,7 @@ I put together some test cases to figure out why and where libusb or OpenOCD had
 
 This test will attempt to print device information, connect to the device and print manufacture ID, Serial number, Product name, and finally claim device interfaces. This is a very simplified test similar to the listdevs.exe and xusb.exe that comes with the libusb windows package.
 
-Using `xusb 1cbe:00fd` should print similar information about this device. However, in my case, it doesn't - it fails, which is the reason for list_dev.py.
+Using `xusb 1cbe:00fd` should print similar information about this device. However, in my case, it doesn't. - it fails, which is the reason for list_dev.py.
 
 ## Test results (simplified)
 Libusb has an issue talking to the first ICDI device with an error `LIBUSB_ERROR_NOT_SUPPORTED [-12]`. This was a good piece of information in seeing why OpenOCD couldn't open the ICDI interface.
@@ -59,6 +59,12 @@ Bus 002 Device 002: ID 1cbe:00fd
 
 ## What the results mean
 The ICDI appears as two devices to libusb, the first device it finds, but cannot be opened, the second device can be opened. With the first instance of the device none of the interfaces can be claimed, but on the second instance, interface 2 and 3 can be claimed. The interface we need to connect to is the debug interface which is interface 2, on the second device handle. On inspection of OpenOCD ICDI driver code, the libusb function `libusb_open_device_with_vid_pid(h->usb_ctx, param->vid, param->pid)` is used to find the ICDI and the handle usb_ctx. The device is found, but it can't be opened with the first device handle, and so it fails.
+
+### TL;DR
+- On Windows 10 TI ICDI device shows up as two devices. One that can be opened by libusb, and one that fails to be opened.
+- libusb's function `libusb_open_device_with_vid_pid` will find the first instance of usb device with matching vid and pid, and try to open it, which fails.
+
+
 
 ## Making it work
 As is turns out there's already a better implementation in OpenOCD for finding a debug interface, its used by st-link driver stlink_usb.

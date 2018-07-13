@@ -12,13 +12,16 @@ repository: tahull/tahull.github.io
 markdown: kramdown
 highlighter: rouge
 
+#google analytics
+google_analytics: UA-122054232-1
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-github-metadata
 
 # Custom
-current_version:      0.0.59
+current_version:      0.0.70
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

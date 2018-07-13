@@ -17,7 +17,8 @@ A simple client to test TCP communication to an Ethernet PIC project.
 <img src="/images/projects/android/tcp-blinky-client/slide-show.gif" class="img-fluid"/>
 
 ## Software design
-Layout. This project uses Relative and Linear layouts. A single Relative layout could be used, but things get messy when there's more than a few components. Moving one component when there's other components whose position is relative to the moved component will cause undesired movement of those relative components. Renaming a component will break the relative location of other components and the renamed component.
+### Layout
+This project uses Relative and Linear layouts. A single Relative layout could be used, but things get messy when there's more than a few components. Moving one component when there's other components whose position is relative to the moved component will cause undesired movement of those relative components. Renaming a component will break the relative location of other components and the renamed component.
 
 Putting a Layout in another Layout helps manage component placement. Components that are stacked horizontal or vertical can be grouped in LinearLayout within the RelativeLayout.
 
