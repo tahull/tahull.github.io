@@ -73,9 +73,6 @@ else
       add = true
   if add == true
     add this cat-->
-
-
-
 {% assign projects = site.posts | where: "layout","project" %}
 {% assign array_of_cats = ''|split:''%}
 {% for project in projects  %}
@@ -105,7 +102,7 @@ else
         <a class="text-white" href="{{ project.url }}">
         {% if project.featured-img %}
           <div class = "card-img-wrap">
-            <img class="card-img" src="{{ project.featured-img }}" style="opacity: .6;">
+            <img class="card-img" src="{{ project.featured-img }}" style="opacity: .85;">
             <div class="card-img-overlay">
         {% else %}
             <div class="card-body">
@@ -119,40 +116,3 @@ else
   {% endfor %}
   </div>
 {% endfor %}
-
-{% comment %}
-<!-- order by project category, nills last -->
-{% assign projects = site.posts | sort: 'project-category', 'last' %}
-{% for post in projects  %}
-  <!-- ignore nills -->
-  {% if post.project-category %}
-    <!-- category found for the first time -->
-    {% if post.project-category != temp %}
-      <h4>{{post.project-category}} projects</h4>
-      <div class="row">
-        <!-- build card block of <project category> -->
-        {% assign sorted_projects = site.posts | where:"project-category",post.project-category %}
-        {% for project in sorted_projects %}
-          <div class="col-lg-3 col-md-4 col-sm-6 my-3">
-            <div class="card border-dark bg-dark">
-              <a class="text-white" href="{{ project.url }}">
-              {% if project.featured-img %}
-                <img class="card-img" src="{{ project.featured-img }}">
-                <div class="card-img-overlay">
-              {% else %}
-                <div class="card-body">
-              {% endif %}
-                  <h4 class="card-title"><small>{{project.title}}</small></h4>
-                </div>
-              </a>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      {% assign temp = post.project-category %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endcomment %}
-
-{{ content }}

@@ -19,6 +19,11 @@ footer {
   height: 70px;
 }
 
+hr {
+	background-color: grey;
+	height: 1px;
+}
+
 .jumbotron-hero{
   color:#fff;
   text-align: center;

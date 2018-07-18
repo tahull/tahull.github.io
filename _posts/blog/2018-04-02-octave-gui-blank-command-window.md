@@ -15,9 +15,7 @@ After applying an update for graphics driver, and Octave on Ubuntu 16.04. Octave
 
 Initially I tried changing some settings/ reset some defaults. Searched for similar issues and solutions. purged and re-installed octave (not a fix).
 
-Some results I found suggested its a configuration problem between opengl and qt. A bug report on this related issue said its a user configuration problem. A result on stack overflow said they changed the .config/octave folder permissions, and that fixed their blank command window issue.
-
-I'm guessing the issue is something to do with old settings or key-value-pairs not being updated from the previous versions qt-settings file, a name change, a new key, an old key removed, who knows. Octave or the package manager doesn't handle the update migration well or cant overwrite the old setting file.
+Some results I found suggested its a configuration problem between opengl and qt. I'm guessing the issue is something to do with old settings or key-value-pairs not being updated from the previous versions qt-settings file, a name change, a new key, an old key removed, who knows. Octave or the package manager doesn't handle the update migration well or cant overwrite the old setting file.
 
 ## TL;DR
 Delete the qt-settings or entire octave folder, then octave will generate a new config and present you with a welcome screen the next time its opened.

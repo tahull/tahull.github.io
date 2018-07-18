@@ -15,13 +15,15 @@ highlighter: rouge
 #google analytics
 google_analytics: UA-122054232-1
 
+paginate: 5
+
 plugins:
-  - jekyll-feed
+#  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-github-metadata
 
 # Custom
-current_version:      0.0.70
+current_version:      0.0.75
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -1,13 +1,13 @@
 ---
-layout: project                               #file name: year-month-day-title.md
-categories: PCB breakout                                # category
-tags: usb "usb breakout"
-permalink: /projects/pcb/:title:output_ext        # permalink if any
-project-category: PCB                          # project type/technology used
+layout: project
+categories: PCB breakout
+tags: usb breakout usb-breakout
+permalink: /projects/pcb/:title:output_ext
+project-category: PCB
 hero-img: /images/projects/pcb/usbb/hero.jpg
-featured-img: /images/projects/pcb/usbb/feature.png                               # featured image if any
-schematic-img:
-project-source: https://github.com/tahull/Eagle-projects/tree/master/usbbreakout                              # sources
+featured-img: /images/projects/pcb/usbb/feature.png
+schematic-img: /images/projects/pcb/usbb/sch.png
+project-source: https://github.com/tahull/Eagle-projects/tree/master/usbbreakout
 ---
 
 {% if page.featured-img %}

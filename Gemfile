@@ -17,15 +17,14 @@ source "https://rubygems.org"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem 'github-pages', group: :jekyll_plugins
 
-gem 'html-proofer'
-
-gem "jekyll-github-metadata"
-
+#gem 'html-proofer'
 
 # If you have any plugins, put them here!
-#group :jekyll_plugins do
-#  gem "jekyll-feed", "~> 0.6"
-#end
+group :jekyll_plugins do
+#  gem "jekyll-feed"
+  gem 'jekyll-seo-tag'
+  gem "jekyll-github-metadata"
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 #gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

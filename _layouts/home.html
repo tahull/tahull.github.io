@@ -2,10 +2,56 @@
 layout: default
 ---
 
+<!-- This loops through the paginated posts -->
+<h4> Posts </h4>
+<ul>
+{% for post in paginator.posts %}
+  <li>
+    <div class="content my-4" style="overflow:hidden;">
+      <h5>
+        <a href="{{ post.url }} ">{{ post.title }}</a>
+        <small class="text-muted">{{post.date | date: "%B %-d, %Y"}}</small>
+      </h5>
+      {% if post.featured-img %}
+        <img src="{{ post.featured-img }}" class="mr-2" style="float:left; max-width:10rem;">
+      {% endif %}
+      {{ post.excerpt | strip_html | truncate: 400 }}
+      <a href="{{ post.url }}">Read the full post! &raquo</a>
+    </div>
+  </li>
+  <hr>
+{% endfor %}
+</ul>
 
-  {{ content }}
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<ul class="pagination justify-content-center">
+  {% if paginator.previous_page %}
+    <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+  {% else %}
+    <li class="page-item disabled"><div class="page-link">&laquo; </div></li>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <li class="page-item active"><div class="page-link">{{ page }}</div></li>
+    {% elsif page == 1 %}
+      <li class="page-item"><a class="page-link" href="{{ "/" | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+    {% else %}
+      <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+  {% else %}
+    <li class="page-item disabled"><div class="page-link">&raquo;</div></li>
+  {% endif %}
+</ul>
+{% endif %}
 
   <!-- Display recent posts -->
+{% comment %}
 <h4> Posts </h4>
 <ul>
   {% for post in site.posts %}
@@ -24,3 +70,4 @@ layout: default
     </li>
   {% endfor %}
 </ul>
+{% endcomment %}

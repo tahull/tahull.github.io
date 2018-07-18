@@ -2,18 +2,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  {% seo %}
-
   <title>
-    {%- if page.title -%}
+    {% if page.title %}
       {{ page.title | smartify }} · {{ site.title | smartify }}
-    {%- else -%}
+    {% else %}
       {{ site.title | smartify }} · {{ site.description | smartify }}
-    {%- endif -%}
+    {% endif %}
   </title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{{ site.baseurl }}/dist/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ "/dist/bootstrap/css/bootstrap.min.css" | relative_url }}" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="{{ "/css/custom.css" | relative_url }}" rel="stylesheet">
@@ -26,4 +24,7 @@
   {% if page.use-math %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   {% endif %}
+
+  {% seo %}
+
 </head>

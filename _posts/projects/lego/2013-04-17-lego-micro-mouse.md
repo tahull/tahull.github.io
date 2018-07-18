@@ -1,7 +1,7 @@
 ---
 layout: project       #file name: year-month-day-title.md
-categories: Mindstorm "micro mouse"
-tags: flood-fill Lego Mindstorm "micro mouse"
+categories: Mindstorm micromouse
+tags: flood-fill Lego-Mindstorm micromouse
 permalink: /projects/lego/:title:output_ext            # permalink if any
 project-category: Lego     # category
 hero-img: /images/projects/lego/mouse/hero.jpg

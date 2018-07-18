@@ -1,13 +1,13 @@
 ---
-layout: project                               #file name: year-month-day-title.md
-categories: PCB "power supply"  
-tags: LM317T "breadboard power supply"                                # category
-permalink: /projects/pcb/:title:output_ext        # permalink if any
-project-category: PCB                         # project type/technology used
+layout: project
+categories: PCB power-supply
+tags: LM317T breadboard-power-supply
+permalink: /projects/pcb/:title:output_ext
+project-category: PCB
 hero-img: /images/projects/pcb/breadboard-ps/hero.jpg
-featured-img: /images/projects/pcb/breadboard-ps/feature.png                                # featured image if any
+featured-img: /images/projects/pcb/breadboard-ps/feature.png
 schematic-img: /images/projects/pcb/breadboard-ps/sch.png
-project-source: https://github.com/tahull/Eagle-projects/tree/master/breadboardpowersupply                              # sources
+project-source: https://github.com/tahull/Eagle-projects/tree/master/breadboardpowersupply
 use-math: true
 ---
 
