@@ -18,9 +18,10 @@ google_analytics: UA-122054232-1
 paginate: 5
 
 plugins:
-#  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-github-metadata
+  - jekyll-sitemap
+  - jekyll-feed
 
 # Custom
 current_version:      0.0.75
