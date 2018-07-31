@@ -49,25 +49,3 @@ layout: default
   {% endif %}
 </ul>
 {% endif %}
-
-  <!-- Display recent posts -->
-{% comment %}
-<h4> Posts </h4>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <div class="post-list my-4" style="overflow:hidden;">
-        <h5>
-          <a href="{{ post.url }} ">{{ post.title }}</a>
-          <small class="text-muted">{{post.date | date: "%B %-d, %Y"}}</small>
-        </h5>
-        {% if post.featured-img %}
-          <img src="{{ post.featured-img }}" class="mr-2" style="float:left; max-width:10rem;">
-        {% endif %}
-      	{{ post.excerpt | strip_html | truncate: 400 }}
-        <a href="{{ post.url }}">Read the full post! &raquo</a>
-      </div>
-    </li>
-  {% endfor %}
-</ul>
-{% endcomment %}

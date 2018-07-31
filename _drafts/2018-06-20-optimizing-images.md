@@ -14,7 +14,7 @@ Udacity offers a free course called responsive Images.
 
 The gist of responsive images is
 - Don't use images unless you need to
-  - use svgs or CCS tricks instead
+  - use svgs or CSS tricks instead
 - Use srcset and let the browser pick the best option
 - resize and optimize Images
 
