@@ -14,7 +14,7 @@ default install of Manjaro XFCE Edition (17.0.1) with the install option: instal
 
 This error occurred while installing a large application `No space left on device.`
 
-part of the problem is /tmp fills up. After an install attempt fails, the failed content is left in /tmp and RAM, leaving the system crippled till reboot.
+Part of the problem is /tmp fills up. After an install attempt fails, the failed content is left in /tmp and RAM, leaving the system crippled till reboot.
 Disk file systems usage can be seen with the command:
 
 ```

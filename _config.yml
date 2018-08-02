@@ -8,12 +8,19 @@ repository: tahull/tahull.github.io
 #github_username:
 #excerpt_separator: "<!--more-->"
 
+# Custom
+current_version:      0.0.85
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
 
 #google analytics
 google_analytics: UA-122054232-1
+
+#comments
+disqus:
+  shortname: tahull
 
 paginate: 5
 
@@ -23,8 +30,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
-# Custom
-current_version:      0.0.77
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

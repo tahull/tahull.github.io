@@ -10,3 +10,7 @@ layout: default
 </header>
 
 {{ content }}
+
+{% if site.disqus.shortname %}
+  {% include disqus.html %}
+{% endif %}
