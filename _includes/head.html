@@ -9,15 +9,19 @@
       {{ site.title | smartify }} · {{ site.description | smartify }}
     {% endif %}
   </title>
-  
+
   <!-- favicon -->
   <link rel="icon" href="{{ "/images/icons/favicon.ico" | relative_url }}" type="image/x-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="{{ "/dist/bootstrap/css/bootstrap.min.css" | relative_url }}" rel="stylesheet">
 
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
   <!-- Custom styles for this template -->
   <link href="{{ "/css/custom.css" | relative_url }}" rel="stylesheet">
+  <!-- code highlight -->
   <link href="{{ "/css/syntax.css" | relative_url }}" rel="stylesheet">
 
   {% if jekyll.environment == 'production' and site.google_analytics %}

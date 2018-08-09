@@ -14,8 +14,6 @@ use-math: true
   <img src="{{ page.featured-img }}" class="img-fluid mr-3" align="left"/>{% endif %}
 These things are fun to put together and interesting how a single line of LEDs moving fast enough, can trick our eyes into seeing more. This is the effect of Persistence Of Vision.
 
-----
-
 - Displaying RPM
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/liKahwAPjnU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -23,7 +21,6 @@ These things are fun to put together and interesting how a single line of LEDs m
 - Displaying rpm,flower/star, time format
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vBU4JvQ9cXI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 
 ---
 ## Components
@@ -79,17 +76,13 @@ These things are fun to put together and interesting how a single line of LEDs m
 - Output enable (OE) (active low) is tied to ground, this will keep the output side of the latches active and will never go into a high impedance state. The LED's wont change until they're told to change.
 - Latch enable (LE) is active high, and the latch enables for the two 74LS373's are controlled by two more IO pins on the micro controller. The micro controller can activate one latch and set one set of eight LED's, then switch to activate the next latch and set the next set of eight LED's with a different pattern, in effect, controlling 16 independent LED's with eight digital IO ports.
 
-
 #### Ir Emitter and photo transistor
 <img src="/images/projects/pic/spinning-pov/pov-side.png" class="img-fluid" style="float:right;"/>
 Ir emitter pictured, attached to frame. Ir emitter is powered by the fan dc power source, with a current limiting resistor that will be suitable depending on the voltage of the fans supply. Emitter and receiver need to have a meeting point, a point where the Ir emitter will be detected by the photo transistor.
 
-
 #### Balancing
 <img src="/images/projects/pic/spinning-pov/pov-front.png" class="img-fluid mr-3" style="float:left;"/>
 Some balancing was needed. A piece of proto board with some washers taped to it worked. There was still some wobble to it, but much less than without a counter balance.
-
----
 
 ### Software
 The software consists of a few components, interrupts for handling the start position and timer, in-line delay for creating the delay between degrees of rotation, and functions for displaying text/numbers on the spinning display.  
@@ -107,7 +100,7 @@ With prescaler off one interrupt with this 8-bit timer will take:
 
 \\[50us/200ns = 250\\]
 
-So timer reload value should be:
+Timer reload value should be:
 
 \\[256-250 = 6\\]
 

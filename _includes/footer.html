@@ -1,10 +1,36 @@
 
-<footer class="bg-dark">
+<footer class="footer bg-dark">
+  <div class="container">
+    <p><small>Last built {{ site.time | date: "%B %-d, %Y"}}</small></p>
+    <div class="row">
+      <div class="col-sm-6">
+        <ul style="list-style-type:none">
+          <li>
+            <a href="{{ site.github.owner_url }}"><i class="fab fa-fw fa-github fa-lg"></i></a>
+            <a href="{{ '/feed.xml' | relative_url }}"><i class="fas fa-fw fa-rss fa-lg"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <!-- <span class="text-muted"></span>-->
+        <ul style="list-style-type:none">
+          <li class="text-muted">
+            <small>Content &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.</small>
+          </li>
+          <li class="text-muted">
+            <small> Theme by tahull v{{ site.current_version }}. Powered by Jekyll</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% comment %}
   <p class="text-center text-white">
     A work in progress. Last built {{ site.time | date: "%B %-d, %Y"}}
     <br>
-    <a class="nav-link" href="{{ site.github.owner_url }}">
-      <img src="{{ "/images/icons/github.svg" | relative_url }}" width="24px" height="24px"></a>
+    <a href="{{ site.github.owner_url }}"><i class="fab fa-github"></i></a>
     v{{ site.current_version }}
+    Content &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.
   </p>
+  {% endcomment %}
 </footer>
