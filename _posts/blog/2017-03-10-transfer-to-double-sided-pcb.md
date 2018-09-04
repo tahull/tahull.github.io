@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: tips&tricks
+categories: tips&amp;tricks
 tags: pcb-transfer dual-layer double-sided
 permalink: /:categories/:year/:month/:title:output_ext
 ---

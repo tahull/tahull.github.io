@@ -2,11 +2,11 @@
 layout: project
 categories: circuit
 tags: diode-limiter diode-clamp
-permalink: /projects/tips&tricks/:title:output_ext
-project-category: Tips&Tricks
-hero-img: /images/projects/tips&tricks/o-scope/hero.jpg
-featured-img: /images/projects/tips&tricks/o-scope/feature.jpg  # featured image if any
-schematic-img: /images/projects/tips&tricks/o-scope/sch.png  
+permalink: /projects/tips-tricks/:title:output_ext
+project-category: Tips&amp;Tricks
+hero-img: /images/projects/tips-tricks/o-scope/hero.jpg
+featured-img: /images/projects/tips-tricks/o-scope/feature.jpg  # featured image if any
+schematic-img: /images/projects/tips-tricks/o-scope/sch.png  
 project-source:                               # sources
 ---
 
@@ -26,7 +26,7 @@ So... there's software that can allow a sound card to be used as an oscilloscope
 ### Software
 <a href="https://www.zeitnitz.eu/scope_en">Soundcard Oscilloscope</a>
 
-<img src="/images/projects/tips&tricks/o-scope/soundcard-scope-sw.png" class="img-fluid"/>
+<img src="/images/projects/tips-tricks/o-scope/soundcard-scope-sw.png" class="img-fluid"/>
 
 And here's some more sound card oscilloscope options:     
 <a href="http://www.zen22142.zen.co.uk/Prac/winscope.htm">Winscope</a>   
@@ -44,8 +44,8 @@ And here's some more sound card oscilloscope options:
 This hardware design is adapted from
 <a href="http://homediyelectronics.com/projects/howtomakeafreesoundcardpcoscilloscope/">Steve Garratt</a> and his sound card oscilloscope. This is a simple hardware design that will help to keep a test signal in a safe range for the sound card.  A diode limiter circuit will clip the voltage at +.6v to -.6v. A notable word here is "clip" this signal in this simulation run is clipped, the signal above .6v and below -.6v is cut off.
 
-<img src="/images/projects/tips&tricks/o-scope/diode-limiter1.png" class="img-fluid"/>
+<img src="/images/projects/tips-tricks/o-scope/diode-limiter1.png" class="img-fluid"/>
 
 This is where the potentiometer comes in, to drop the signal voltage down to a range under the 600mv to -600mv.
 
-<img src="/images/projects/tips&tricks/o-scope/diode-limiter2.png" class="img-fluid"/>
+<img src="/images/projects/tips-tricks/o-scope/diode-limiter2.png" class="img-fluid"/>

@@ -101,7 +101,7 @@ else
       <div class="card border-dark bg-dark" style="text-shadow: black 0.3em 0.3em 0.3em;">
         <a class="text-white" href="{{ project.url }}">
         {% if project.featured-img %}
-          <div class = "card-img-wrap">
+          <div class = "card-img-wrap" style="overflow: hidden; position: relative;">
             <img class="card-img" src="{{ project.featured-img }}" style="opacity: .85;">
             <div class="card-img-overlay">
         {% else %}
