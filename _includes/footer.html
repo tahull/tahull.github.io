@@ -1,10 +1,13 @@
 
 <footer class="footer bg-dark">
   <div class="container">
-    <p><small>Last built {{ site.time | date: "%B %-d, %Y"}}</small></p>
+
     <div class="row">
       <div class="col-sm-6">
         <ul style="list-style-type:none">
+          <li>
+            <small>Last built {{ site.time | date: "%B %-d, %Y"}}</small>
+          </li>
           <li>
             <a href="{{ site.github.owner_url }}"><i class="fab fa-fw fa-github fa-lg"></i></a>
             <a href="{{ '/feed.xml' | relative_url }}"><i class="fas fa-fw fa-rss fa-lg"></i></a>
@@ -18,7 +21,7 @@
             <small>Content &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.</small>
           </li>
           <li class="text-muted">
-            <small> Theme by tahull v{{ site.current_version }}. Powered by Jekyll</small>
+            <small> Theme by tahull v{{ site.current_version }}. Powered by Jekyll &amp Bootstrap 4</small>
           </li>
         </ul>
       </div>

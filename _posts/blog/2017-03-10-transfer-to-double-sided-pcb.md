@@ -1,12 +1,12 @@
 ---
 layout: post
 categories: tips&amp;tricks
-tags: pcb-transfer dual-layer double-sided
+tags: pcb-transfer dual-layer-pcb double-sided-pcb
 permalink: /:categories/:year/:month/:title:output_ext
 ---
 
 
-Transferring to a two layer PCB, and getting the two layers to line up right can be a pain. If its not right, through hole parts might not line up right.
+Transferring to a two layer PCB, and getting the two layers to line up right can be a pain. If its not right, vias, and through hole parts will not line up right.
 
 I've seen a few methods that seem like the hard way. Cutting the layers and PCB to very specific sizes and matching up corners or guide points.
 
