@@ -13,8 +13,9 @@ project-source: https://github.com/tahull/LegoMicroMouse      # sources
 This was an in-class project I had. The focus in this project was meant to be more on the flood fill algorithm than hardware design, so the Lego Mindstorm platform was provided in the class. The Lego Mindstorm platform is well suited for quickly creating hardware but with limited component choices. Simply choose from the available sensors, actuators, motors and snap them together in the desired configuration.
 A micro-mouse is a robotic maze solver, like its flesh and blood counterpart a mouse or rat in a maze. Instead of looking for food in the maze the robotic version searches for the goal, the center of the maze. A typical maze would be 16x16, but for the purposes of saving space, the class competition was held on a 5x5 maze. This project could be extended to a 16x16 maze by changing the #define MAZE_WIDTH and MAZE_HEIGHT to 16 and 16 respectively.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lDM9-iq9xZ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+<div class="embed-responsive embed-responsive-16by9 col-md-10 col-lg-7">
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/lDM9-iq9xZ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 ---
 ## Components
 ### Parts

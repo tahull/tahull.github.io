@@ -16,11 +16,15 @@ These things are fun to put together and interesting how a single line of LEDs m
 
 - Displaying RPM
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/liKahwAPjnU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9 col-md-10 col-lg-7">
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/liKahwAPjnU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 - Displaying rpm,flower/star, time format
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vBU4JvQ9cXI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9 col-md-10 col-lg-7">
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/vBU4JvQ9cXI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ---
 ## Components

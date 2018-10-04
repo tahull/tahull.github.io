@@ -8,7 +8,9 @@ permalink: /:categories/:year/:month/:title:output_ext
 
 If you're like me and want to get multiple PCB layers on one printout rather than one per page. Here's a simple method to achieve that.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U1sPeEALW9o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9 col-md-10 col-lg-7">
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/U1sPeEALW9o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 
 ---

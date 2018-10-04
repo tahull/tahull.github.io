@@ -24,6 +24,7 @@ hr {
 }
 .jumbotron-hero{
   text-align: center;
+  background-color: inherit;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

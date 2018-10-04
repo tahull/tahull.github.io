@@ -23,7 +23,10 @@ I didn't get a good transfer, which left some breaks in the copper traces
   - rather than waiting to replace it I just used a larger bit which nearly destroyed the solder pads for the power jack.
 - (Notes for next time) To get a good transfer, the copper surface should be clean, use acetone and steal wool, and wear gloves to avoid leaving any oils transferred from finger contact. After transferring the layout to copper surface, thoroughly check it and touch up any areas with sharpie. After etching, check the traces for continuity, if there's any breaks, fix by soldering a jumper wire between the break.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z9CcZsD-erY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<div class="embed-responsive embed-responsive-16by9 col-md-10 col-lg-7">
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Z9CcZsD-erY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
+</div>
 
 ---
 ## Components
