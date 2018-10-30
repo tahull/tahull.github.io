@@ -1,7 +1,7 @@
 ---
 title: tahull
 description: > # this means to ignore newlines until "baseurl:"
-  Amusement parks for electrons
+  Electronics, PCB's, projects with PIC microcontrollers, and linux fixes and woes
 baseurl: ""
 url: "https://tahull.github.io"
 repository: tahull/tahull.github.io
@@ -9,7 +9,7 @@ repository: tahull/tahull.github.io
 #excerpt_separator: "<!--more-->"
 
 # Custom
-current_version:      0.0.89
+current_version:      0.0.93
 
 # Build settings
 markdown: kramdown
