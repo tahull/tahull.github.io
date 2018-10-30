@@ -13,7 +13,7 @@ There are some alternative 64-bit parallel port drivers that can be used with 64
 - Installing the driver and including the inpoutx64.dll in openocd/bin folder
 - Modify OpenOCD code to use inpoutx64 instead of giveio
 
-<img src="/images/blog/openocd/parport-fail.png" class="img-fluid"/>
+<img src="/images/blog/openocd/parport-fail.png" alt="image of openOCD parport missing privileges" title = "openOCD missing privileges" class="img-fluid"/>
 
 OpenOCD could be modified for 64-bit windows; this guide will show the steps I took to get my parallel port JTAG wiggler to work with 64-bit Windows 10.
 
@@ -40,4 +40,4 @@ open a cmd shell, cd to the location of the OpenOCD.exe and run
 
 Now OpenOCD should be running
 
-<img src="/images/blog/openocd/parport-success.png" class="img-fluid"/>
+<img src="/images/blog/openocd/parport-success.png" alt="image of openOCD connected through parport" title = "openOCD connected through parport" class="img-fluid"/>

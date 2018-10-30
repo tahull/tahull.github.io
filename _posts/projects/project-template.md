@@ -13,7 +13,7 @@ use-math: false
 
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>{% endif %}
+  <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" align="left"/>{% endif %}
 
 ---
 ## Components
@@ -24,7 +24,7 @@ use-math: false
 ---
 ## Schematic
 {% if page.schematic-img %}
-  <img src="{{ page.schematic-img }}" class="img-fluid"/>
+  <img src="{{ page.schematic-img }}" alt="image of wiring diagram" title="wiring diagram" class="img-fluid"/>
 {% endif %}
 
 ---

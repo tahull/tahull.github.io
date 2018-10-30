@@ -13,7 +13,7 @@ layout: default
         <small class="text-muted">{{post.date | date: "%B %-d, %Y"}}</small>
       </h5>
       {% if post.featured-img %}
-        <img src="{{ post.featured-img }}" class="mr-2" style="float:left; max-width:10rem;">
+        <img src="{{ post.featured-img }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="mr-2" style="float:left; max-width:10rem;">
       {% endif %}
       <!-- list categories and tags -->
       {% for category in post.categories %}

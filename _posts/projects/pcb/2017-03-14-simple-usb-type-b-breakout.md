@@ -11,7 +11,7 @@ project-source: https://github.com/tahull/Eagle-projects/tree/master/usbbreakout
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
+  <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
 There's not a whole lot to this project. A easy way to get a USB connection from one device to another is to chop up a USB cable, but I prefer a modular breadboard friendly component. The four small pins of a USB type B connector wont easily connect to a bread board, hence breakout board.
 
 ---
@@ -26,12 +26,12 @@ There's not a whole lot to this project. A easy way to get a USB connection from
 ---
 ## Schematic
 {% if page.schematic-img %}
-  <img src="{{ page.schematic-img }}" class="img-fluid"/>
+  <img src="{{ page.schematic-img }}" alt="image of wiring diagram" title="wiring diagram" class="img-fluid"/>
 {% endif %}
 
 ---
 ## Design
-<img src="/images/projects/pcb/usbb/slide-show.gif" class="img-fluid"/>
+<img src="/images/projects/pcb/usbb/slide-show.gif" alt="image of pcb layers" title="pcb layers" class="img-fluid"/>
 ### Hardware
 A jack, a double sided PCB, a breakout component is born.
 

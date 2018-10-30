@@ -6,12 +6,13 @@ permalink: /projects/pic/:title:output_ext
 project-category: PIC
 hero-img: /images/projects/pic/spinning-pov/hero.jpg
 featured-img: /images/projects/pic/spinning-pov/feature.jpg
+schematic-img: /images/projects/pic/spinning-pov/sch.png
 project-source: https://github.com/tahull/PIC-projects/tree/master/SpinningPOV.X
 use-math: true
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" align="left"/>{% endif %}
+  <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" align="left"/>{% endif %}
 These things are fun to put together and interesting how a single line of LEDs moving fast enough, can trick our eyes into seeing more. This is the effect of Persistence Of Vision.
 
 - Displaying RPM
@@ -68,24 +69,26 @@ These things are fun to put together and interesting how a single line of LEDs m
 
 ---
 ## Schematic
-<img src="/images/projects/pic/spinning-pov/sch.png" class="img-fluid"/>
+{% if page.schematic-img %}
+  <img src="{{ page.schematic-img }}" alt="image of wiring diagram" title="wiring diagram" class="img-fluid"/>
+{% endif %}
 
 ---
 ## Design
-<img src="/images/projects/pic/spinning-pov/slide-show.gif" class="img-fluid"/>
+<img src="/images/projects/pic/spinning-pov/slide-show.gif" alt="image of project stages" title="project slide show" class="img-fluid"/>
 ### Hardware
 #### 74LS373
 - 74LS373 is eight d-latches.When output and latch is enabled, the logic level on the input side is latched to output side.
-<img src="/images/projects/pic/spinning-pov/ls373tt.png" class="img-fluid ml-3" style="float:right;"/>
+<img src="/images/projects/pic/spinning-pov/ls373tt.png" alt="ls373 truth table" title="ls373 truth table" class="img-fluid ml-3" style="float:right;"/>
 - Output enable (OE) (active low) is tied to ground, this will keep the output side of the latches active and will never go into a high impedance state. The LED's wont change until they're told to change.
 - Latch enable (LE) is active high, and the latch enables for the two 74LS373's are controlled by two more IO pins on the micro controller. The micro controller can activate one latch and set one set of eight LED's, then switch to activate the next latch and set the next set of eight LED's with a different pattern, in effect, controlling 16 independent LED's with eight digital IO ports.
 
 #### Ir Emitter and photo transistor
-<img src="/images/projects/pic/spinning-pov/pov-side.png" class="img-fluid" style="float:right;"/>
+<img src="/images/projects/pic/spinning-pov/pov-side.png" alt="image of IR emitter and photo transistor pair" title="emitter and photo transistor pair" class="img-fluid" style="float:right;"/>
 Ir emitter pictured, attached to frame. Ir emitter is powered by the fan dc power source, with a current limiting resistor that will be suitable depending on the voltage of the fans supply. Emitter and receiver need to have a meeting point, a point where the Ir emitter will be detected by the photo transistor.
 
 #### Balancing
-<img src="/images/projects/pic/spinning-pov/pov-front.png" class="img-fluid mr-3" style="float:left;"/>
+<img src="/images/projects/pic/spinning-pov/pov-front.png" alt="image of weight balancing" title="weight balancing" class="img-fluid mr-3" style="float:left;"/>
 Some balancing was needed. A piece of proto board with some washers taped to it worked. There was still some wobble to it, but much less than without a counter balance.
 
 ### Software

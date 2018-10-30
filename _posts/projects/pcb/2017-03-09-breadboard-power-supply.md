@@ -12,7 +12,7 @@ use-math: true
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
+  <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
 A power supply is something every electronics project needs. To save time on prototyping a ready to go power supply is ideal. I wanted a supply that fits the breadboard nicely and can supply 3.3v or 5v.
 In this project a few things went wrong.
 
@@ -25,7 +25,7 @@ I didn't get a good transfer, which left some breaks in the copper traces
 
 
 <div class="embed-responsive embed-responsive-16by9 col-md-10 col-lg-7">
-  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Z9CcZsD-erY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Z9CcZsD-erY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ---
@@ -51,7 +51,7 @@ I didn't get a good transfer, which left some breaks in the copper traces
 ---
 ## Schematic
 {% if page.schematic-img %}
-  <img src="{{ page.schematic-img }}" class="img-fluid"/>
+  <img src="{{ page.schematic-img }}" alt="image of wiring diagram" title="wiring diagram" class="img-fluid"/>
 {% endif %}
 
 ---

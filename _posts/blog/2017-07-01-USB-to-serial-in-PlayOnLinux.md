@@ -21,4 +21,4 @@ ln -s /dev/ttyUSB0 ~/PlayOnLinux\'s\ virtual\ drives/'win_env'/dosdevices/com3
 
 Where 'win_env' is the name of the PlayOnLinux windows environment name. This line can be added to PlayOnLinux configuration. Open the PlayOnLinux configuration, select the application, open Miscellaneous tab and add the above line with the appropriate PlayOnLinux environment path.
 
-<img src="/images/blog/playonlinux/ln-config.jpg" class="img-fluid"/>
+<img src="/images/blog/playonlinux/ln-config.jpg" alt="image of PlayOnLinux configuration window" title = "PlayOnLinux configuration" class="img-fluid"/>

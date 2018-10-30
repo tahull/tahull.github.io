@@ -15,6 +15,10 @@ Uninstalling the virtual com port seems to allow OpenOCD to open the ICDI interf
 
 Either wipe out your VCP (no virtual com port for debug messages) or modify the composite host, these two options aren't very appealing. These work-around options didn't appeal to me, so I tried to figure out why OpenOCD was failing to open the interface.
 
+### TL;DR
+- On Windows 10 TI ICDI device shows up as two devices. One that can be opened by libusb, and one that fails to be opened.
+- libusb's function `libusb_open_device_with_vid_pid` will find the first instance of usb device with matching vid and pid, and try to open it, which fails.
+
 ## Testing
 To test this I used python and Python-libusb1. Python-libusb1 is a python wrapper for libusb, so the functionality under windows should give the same results as how libusb is used in OpenOCD.
 
@@ -60,12 +64,6 @@ Bus 002 Device 002: ID 1cbe:00fd
 ## What the results mean
 The ICDI appears as two devices to libusb, the first device it finds, but cannot be opened, the second device can be opened. With the first instance of the device none of the interfaces can be claimed, but on the second instance, interface 2 and 3 can be claimed. The interface we need to connect to is the debug interface which is interface 2, on the second device handle. On inspection of OpenOCD ICDI driver code, the libusb function `libusb_open_device_with_vid_pid(h->usb_ctx, param->vid, param->pid)` is used to find the ICDI and the handle usb_ctx. The device is found, but it can't be opened with the first device handle, and so it fails.
 
-### TL;DR
-- On Windows 10 TI ICDI device shows up as two devices. One that can be opened by libusb, and one that fails to be opened.
-- libusb's function `libusb_open_device_with_vid_pid` will find the first instance of usb device with matching vid and pid, and try to open it, which fails.
-
-
-
 ## Making it work
 As is turns out there's already a better implementation in OpenOCD for finding a debug interface, its used by st-link driver stlink_usb.
 
@@ -80,7 +78,7 @@ Sources of the proposed changes: [OpenOCDModFiles](https://github.com/tahull/Ope
 ## Testing in OpenOCD
 Finally, does it work? Yes. By opening a cmd prompt with command: `openocd -f board/ek-tm4c123gxl.cfg` the debug interface can now be opened without having to un-install the VCP interface or modify the host composite device with zadig.
 
-<img src="/images/blog/openocd/ti-icdi-success.png" class="img-fluid"/>
+<img src="/images/blog/openocd/ti-icdi-success.png" alt="image of openOCD connected to Tiva tm4c123 device" title = "openOCD connected to tm4c123" class="img-fluid"/>
 
 Notice there is an `Error: libusb_open() failed with LIBUSB_ERROR_NOT_SUPPORTED` thats ok, its just the first attempt to open the debug interface on the first device handle. Upon the second attempt, on the seconds instance of the ICDI device with the interface 2, it does connect.
 

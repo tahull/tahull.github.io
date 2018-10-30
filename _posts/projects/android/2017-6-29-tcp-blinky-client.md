@@ -14,7 +14,7 @@ use-math: false
 
 A simple client to test TCP communication to an Ethernet PIC project.
 
-<img src="/images/projects/android/tcp-blinky-client/slide-show.gif" class="img-fluid"/>
+<img src="/images/projects/android/tcp-blinky-client/slide-show.gif" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid"/>
 
 ## Software design
 ### Layout

@@ -8,7 +8,7 @@ featured-img: /images/blog/octave/feature.png
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
+  <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
 Blank octave command window :( This is one of those annoying errors where part of the functionality is crippled, and you're likely going to spend hours hunting down a fix, or applying updates, un-install, re-install, "did you try restarting it," downgrade to previous version, upgrade to the next version, google it. Maybe if you restart if for the 20th time, and look at it just the right way it will work.
 
 After applying an update for graphics driver, and Octave on Ubuntu 16.04. Octave updated from 4.0.0 to 4.2.1, the octave command window went blank. I could still type in commands, and have it show in command history, but the command window itself wouldn't show what was happening.
@@ -25,8 +25,8 @@ Remove octave config folder.
 rm -r /home/$USER/.config/octave
 ```
 
-<img src="/images/blog/octave/success.png" class="img-fluid"/>
+<img src="/images/blog/octave/success.png" alt="image of octave welcome screen" title = "octave welcome screen" class="img-fluid"/>
 
 And command window is back.
 
-<img src="/images/blog/octave/success2.png" class="img-fluid"/>
+<img src="/images/blog/octave/success2.png" alt="image of working octave command window" title = "working octave command window" class="img-fluid"/>
