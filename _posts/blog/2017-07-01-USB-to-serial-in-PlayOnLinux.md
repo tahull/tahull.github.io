@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: linux-sucks
-tags: USB-To-Serial Hercules-terminal playOnLinux wine
+categories: [linux sucks]
+tags: [linux, USB To Serial, Hercules terminal, playOnLinux, wine, ubuntu 16.04]
 permalink: /:categories/:year/:month/:title:output_ext
 ---
 

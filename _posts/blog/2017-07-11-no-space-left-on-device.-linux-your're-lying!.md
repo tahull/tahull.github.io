@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: linux-sucks
-tags: No-space-left-on-device manjaro
+categories: [linux sucks]
+tags: [No space left on device, manjaro, linux]
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img:
 featured-img:

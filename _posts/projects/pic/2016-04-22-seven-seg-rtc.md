@@ -1,8 +1,7 @@
 ---
 layout: project
-categories: PIC rtc
-tags: rtc multiplex seven-seg-display pov display clock
-project-category: PIC
+categories: [PIC Projects]
+tags: [rtc, multiplex, seven segment display, persistence of vision]
 permalink: /projects/pic/:title:output_ext
 hero-img: /images/projects/pic/rtc/hero.jpg
 featured-img: /images/projects/pic/rtc/feature.jpg

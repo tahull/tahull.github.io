@@ -1,9 +1,8 @@
 ---
 layout: project                               #file name: year-month-day-title.md
-categories: android-apps                                   # category
-tags:
+categories: [Android Projects]                                   # category
+tags: [tcp, linear layout, android design]
 permalink: /projects/android/:title:output_ext        # permalink if any
-project-category: Android                         # project type/technology used
 hero-img: /images/projects/android/tcp-blinky-client/hero.png
 featured-img: /images/projects/android/tcp-blinky-client/feature.png        # featured image if any
 schematic-img:

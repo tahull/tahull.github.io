@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: linux-sucks
-tags: octave linux ubuntu16.04
+categories: [linux sucks]
+tags: [octave, ubuntu 16.04, linux]
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img: /images/blog/octave/blank-command.png
 featured-img: /images/blog/octave/feature.png

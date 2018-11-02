@@ -1,9 +1,8 @@
 ---
 layout: project
-categories: PIC
-tags: rpm pov led-display spinning-display
+categories: [PIC Projects]
+tags: [rtc, rpm meter, persistence of vision, led display, spinning display]
 permalink: /projects/pic/:title:output_ext
-project-category: PIC
 hero-img: /images/projects/pic/spinning-pov/hero.jpg
 featured-img: /images/projects/pic/spinning-pov/feature.jpg
 schematic-img: /images/projects/pic/spinning-pov/sch.png

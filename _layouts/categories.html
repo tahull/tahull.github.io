@@ -3,14 +3,14 @@ layout: default
 ---
 <h2>Category list</h2>
 {% for category in site.categories %}
-  <span><a href="#{{ category[0] }}">{{ category[0] | capitalize }}</a> {{ category[1].size }} | </span>
+  <span><a href="#{{ category[0] }}">{{ category[0] }}</a> {{ category[1].size }} | </span>
 
 {% endfor %}
 <hr>
 
 {% for category in site.categories %}
 {% assign posts = category[1] %}
-<h2 id="{{ category[0] }}" style="display:inline;">{{ category[0] | capitalize }}</h2> <a href="#"> return to top</a> 
+<h2 id="{{ category[0] }}">{{ category[0] }}</h2>
 <ul>
   {% for post in posts %}
     <li><a href="{{ site.url }}{{  post.url }}">{{  post.title }}</a></li>

@@ -1,9 +1,8 @@
 ---
 layout: project
-categories: PCB power-supply
-tags: LM317T breadboard-power-supply
+categories: [PCB Projects]
+tags: [LM317T, breadboard power supply]
 permalink: /projects/pcb/:title:output_ext
-project-category: PCB
 hero-img: /images/projects/pcb/breadboard-ps/hero.jpg
 featured-img: /images/projects/pcb/breadboard-ps/feature.png
 schematic-img: /images/projects/pcb/breadboard-ps/sch.png

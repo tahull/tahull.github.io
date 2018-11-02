@@ -1,6 +1,6 @@
 ---
 layout: project                               
-categories: PIC FSM                                  
+categories: ['PIC project']                                 
 tags: trafficlights FSM
 permalink: /projects/pic/:title:output_ext        
 project-category: PIC                         
@@ -13,7 +13,10 @@ use-math: false
 
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
-A Traffic light state machine is a classic text book problem, that's used to illustrates one or another type of state machine. Mealy or Moore model.
+A Traffic light simulation is a classic text book problem used to demonstrate a state machine.
+
+Its  common to see a state machine implemented as "if" or "switch" case statement. Another approach is to use a struct. using a stuct condenses the state machine logic quite a lot and makes debugging or adjusting states easy.
+
 
 
 

@@ -4,14 +4,14 @@ layout: default
 
 <h2>Tags list</h2>
 {% for tag in site.tags %}
-  <span><a href="#{{ tag[0] }}">{{ tag[0] | capitalize }}</a> {{ tag[1].size }} | </span>
+  <span><a href="#{{ tag[0] }}">{{ tag[0] }}</a> {{ tag[1].size }} | </span>
 {% endfor %}
 
 <hr>
 
 {% for tag in site.tags %}
 {% assign posts = tag[1] %}
-<h2 id="{{ tag[0] }}" style="display:inline;">{{ tag[0] | capitalize}}</h2><a href="#"> return to top</a>  
+<h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
 <ul>
   {% for post in posts %}
     <li><a href="{{ site.url }}{{  post.url }}">{{  post.title }}</a></li>

@@ -3,7 +3,6 @@ layout: project                               #file name: year-month-day-title.m
 categories:                                   # category
 tags:
 permalink: /projects/:categories/:title:output_ext        # permalink if any
-project-category:                          # project type/technology used
 hero-img:
 featured-img:                                 # featured image if any
 schematic-img:

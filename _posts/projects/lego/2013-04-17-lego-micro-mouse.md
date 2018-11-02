@@ -1,9 +1,8 @@
 ---
 layout: project       #file name: year-month-day-title.md
-categories: Mindstorm micromouse
-tags: flood-fill Lego-Mindstorm micromouse
+categories: [Lego Projects]
+tags: [flood fill, Lego Mindstorm, micromouse]
 permalink: /projects/lego/:title:output_ext            # permalink if any
-project-category: Lego     # category
 hero-img: /images/projects/lego/mouse/hero.jpg
 featured-img: /images/projects/lego/mouse/feature.png        # featured image if any
 project-source: https://github.com/tahull/LegoMicroMouse      # sources

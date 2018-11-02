@@ -77,32 +77,32 @@ else
 {% assign array_of_cats = ''|split:''%}
 {% for project in projects  %}
   {% if array_of_cats.size == 0 %}
-    {% assign array_of_cats = array_of_cats|push:project.project-category%}
+    {% assign array_of_cats = array_of_cats|push:project.categories%}
   {% else %}
     {% assign new_cat = true %}
     {% for item in array_of_cats%}
-      {% if item == project.project-category %}
+      {% if item == project.categories %}
         {% assign new_cat = false %}
       {% endif %}
     {% endfor %}
     {% if new_cat == true %}
-      {% assign array_of_cats = array_of_cats|push:project.project-category%}
+      {% assign array_of_cats = array_of_cats|push:project.categories%}
     {% endif %}
   {% endif %}
 {% endfor %}
 
 <!-- print project cards -->
 {% for category in array_of_cats %}
-  <h4>{{category}} projects</h4>
+  <h4>{{category[0]}}</h4>
   <div class="row">
-  {% assign projects = site.posts | where:"project-category",category %}
-  {% for project in projects  %}
+  {% assign projects_by_category = projects | where:"categories",category[0] %}
+  {% for project in projects_by_category  %}
     <div class="col-lg-3 col-md-4 col-sm-6 col-6 my-3">
       <div class="card border-dark bg-dark" style="text-shadow: black 0.3em 0.3em 0.3em;">
         <a class="text-white" href="{{ project.url }}">
         {% if project.featured-img %}
           <div class = "card-img-wrap" style="overflow: hidden; position: relative;">
-            <img class="card-img" src="{{ project.featured-img }}" style="opacity: .85;">
+            <img class="card-img" src="{{ project.featured-img }}" alt="image of {{ project.title }}" title = "{{ project.title }}" style="opacity: .85;">
             <div class="card-img-overlay">
         {% else %}
             <div class="card-body">

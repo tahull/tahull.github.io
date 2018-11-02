@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: tips-tricks
-tags: pcb-transfer dual-layer-pcb double-sided-pcb
+categories: [tips and tricks]
+tags: [pcb transfer, dual layer pcb]
 permalink: /:categories/:year/:month/:title:output_ext
 ---
 

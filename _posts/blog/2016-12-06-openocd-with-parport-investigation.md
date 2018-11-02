@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: openocd
-tags: openocd parport jtag jtag-wiggler windows
+categories: hacks
+tags: [openocd, hacks, parport, jtag wiggler]
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img:
 featured-img: /images/blog/openocd/parport-feature.jpg

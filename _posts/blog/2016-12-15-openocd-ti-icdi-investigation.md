@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: openocd
-tags: openocd ti-icdi jtag windows
+categories: hacks
+tags: [openocd, hacks, ti-icdi]
 permalink: /:categories/:year/:month/:title:output_ext
 hero-img:
 featured-img: /images/blog/openocd/ti-icdi-feature.jpg
