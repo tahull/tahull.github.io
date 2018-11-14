@@ -9,7 +9,7 @@ repository: tahull/tahull.github.io
 #excerpt_separator: "<!--more-->"
 
 # Custom
-current_version:      0.0.94
+current_version:      0.0.98
 
 # Build settings
 markdown: kramdown

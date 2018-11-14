@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% comment %}
 <h4 style="padding-top: 10px;">Recent Projects</h4>
 <div id="projectsCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators" style="bottom:-40px;">
@@ -33,6 +33,7 @@ layout: default
     {% endfor %}
   </div>
 </div>
+{% endcomment %}
 
 <!--TODO generate tree list or table of projects
 read md from project repo and import/embed it-->
@@ -62,6 +63,9 @@ read md from project repo and import/embed it-->
 
 <!-- list by date
 sort by project category that has a most recent project -->
+
+<h1 style="padding-top: 10px;">Projects</h1>
+<hr>
 
 <!--if list size == 0
   get first cat
@@ -98,18 +102,20 @@ else
   {% assign projects_by_category = projects | where:"categories",category[0] %}
   {% for project in projects_by_category  %}
     <div class="col-lg-3 col-md-4 col-sm-6 col-6 my-3">
-      <div class="card border-dark bg-dark" style="text-shadow: black 0.3em 0.3em 0.3em;">
+      <div class="card border-dark bg-dark" style="height:100%; text-shadow: black 0.3em 0.3em 0.3em;">
         <a class="text-white" href="{{ project.url }}">
         {% if project.featured-img %}
           <div class = "card-img-wrap" style="overflow: hidden; position: relative;">
             <img class="card-img" src="{{ project.featured-img }}" alt="image of {{ project.title }}" title = "{{ project.title }}" style="opacity: .85;">
             <div class="card-img-overlay">
         {% else %}
-            <div class="card-body">
+          <div class="card-body">
         {% endif %}
               <h4 class="card-title"><small>{{project.title}}</small></h4>
             </div>
+        {% if project.featured-img %}
           </div>
+        {% endif %}
         </a>
       </div>
     </div>
