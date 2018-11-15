@@ -23,10 +23,14 @@ layout: default
       {% endif %}
         <div class="carousel-inner-recent-projects my-2" style="overflow:auto;">
         {% if post.featured-img %}
-          <img src="{{ post.featured-img }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="mr-3 mb-3" style="float:left; max-height:12rem;">
+        <picture>
+          <source media="(min-width: 750px)" srcset="{{ post.featured-img }}" />
+          <source media="(min-width: 550px)" srcset="{{ post.featured-img | replace: '.', '_medium.' }}" />
+          <img src="{{ post.featured-img | replace: '.', '_small.' }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="rounded float-left mr-2">
+        </picture>
         {% endif %}
           <h3>{{post.title}}</h3>
-        {{ post.excerpt | strip_html | truncate: 500 }}
+        {{ post.excerpt | strip_html | truncate: 450 }}
           <a href="{{ post.url }}">Read the full post! &raquo</a>
         </div>
       </div>
@@ -45,16 +49,20 @@ layout: default
         <small class="text-muted">{{post.date | date: "%B %-d, %Y"}}</small>
       </h5>
       {% if post.featured-img %}
-        <img src="{{ post.featured-img }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="mr-2" style="float:left; max-width:10rem;">
+        <picture>
+          <source media="(min-width: 750px)" srcset="{{ post.featured-img }}" />
+          <source media="(min-width: 550px)" srcset="{{ post.featured-img | replace: '.', '_medium.' }}" />
+          <img src="{{ post.featured-img | replace: '.', '_small.' }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="rounded float-left mr-2">
+        </picture>
       {% endif %}
       <!-- list categories and tags -->
       {% for category in post.categories %}
-        <span><a href="/categories#{{ category }}" class="badge badge-secondary">{{ category }}</span></a>
+        <span><a href="/categories#{{ category }}" class="badge badge-secondary">{{ category }}</a></span>
 
       {% endfor %}
       <br>
       {% for tag in post.tags %}
-        <span><a href="/tags#{{ tag }}" class="badge badge-secondary">{{ tag }}</span></a>
+        <span><a href="/tags#{{ tag }}" class="badge badge-secondary">{{ tag }}</a></span>
       {% endfor %}
       <br>
       {{ post.excerpt | strip_html | truncate: 400 }}

@@ -1,9 +1,8 @@
 ---
 layout: project                               #file name: year-month-day-title.md
-categories: PIC metronome                                   # category
+categories: [PIC Projects]                                  # category
 tags: metronome
 permalink: /projects/pic/:title:output_ext        # permalink if any
-project-category: PIC                            # project type/technology used
 hero-img:
 featured-img:                                 # featured image if any
 project-source: https://github.com/tahull/PIC-projects/tree/master/Metronome.X     # sources
@@ -11,8 +10,7 @@ schematic-img: /images/projects/pic/metronome/sch.png
 ---
 
 {% if page.featured-img %}
-  <img src="{{ page.featured-img }}" class="img-fluid mr-3" style="float:left; max-width:15rem;"/>
-{% endif %}
+  <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" align="left"/>{% endif %}
  A metronome is a device used by musicians to assist with proper timing. A metronome produces regular ticks at a user selected beats per minute. The beats per minute for this project will vary between 30 to 140 (this range can be easily changed).
 
 ---
@@ -33,7 +31,7 @@ schematic-img: /images/projects/pic/metronome/sch.png
 ---
 ## Schematic
 {% if page.schematic-img %}
-  <img src="{{ page.schematic-img }}" class="img-fluid"/>
+  <img src="{{ page.schematic-img }}" alt="image of wiring diagram" title="wiring diagram" class="img-fluid"/>
 {% endif %}
 
 ---
