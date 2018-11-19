@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h4>From Recent Projects</h4>
+<h4>Recent Projects</h4>
 <div id="projectsCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators" style="bottom:-40px;">
     <li data-target="#projectsCarousel" data-slide-to="0" class="active"></li>
@@ -24,9 +24,9 @@ layout: default
         <div class="carousel-inner-recent-projects my-2" style="overflow:auto;">
         {% if post.featured-img %}
         <picture>
-          <source media="(min-width: 750px)" srcset="{{ post.featured-img }}" />
-          <source media="(min-width: 550px)" srcset="{{ post.featured-img | replace: '.', '_medium.' }}" />
-          <img src="{{ post.featured-img | replace: '.', '_small.' }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="rounded float-left mr-2">
+          <source media="(min-width: 850px)" srcset="{{ post.featured-img }}" />
+          <source media="(min-width: 650px)" srcset="{{ post.featured-img | replace: '.', '-medium.' }}" />
+          <img src="{{ post.featured-img | replace: '.', '-small.' }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="rounded float-left mr-2">
         </picture>
         {% endif %}
           <h3>{{post.title}}</h3>
@@ -39,7 +39,7 @@ layout: default
 </div>
 <hr>
 <!-- This loops through the paginated posts -->
-<h4>From the Blog </h4>
+<h4>All Posts </h4>
 <ul>
 {% for post in paginator.posts %}
   <li>
@@ -50,9 +50,9 @@ layout: default
       </h5>
       {% if post.featured-img %}
         <picture>
-          <source media="(min-width: 750px)" srcset="{{ post.featured-img }}" />
-          <source media="(min-width: 550px)" srcset="{{ post.featured-img | replace: '.', '_medium.' }}" />
-          <img src="{{ post.featured-img | replace: '.', '_small.' }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="rounded float-left mr-2">
+          <source media="(min-width: 850px)" srcset="{{ post.featured-img }}" />
+          <source media="(min-width: 650px)" srcset="{{ post.featured-img | replace: '.', '-medium.' }}" />
+          <img src="{{ post.featured-img | replace: '.', '-small.' }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="rounded float-left mr-2">
         </picture>
       {% endif %}
       <!-- list categories and tags -->

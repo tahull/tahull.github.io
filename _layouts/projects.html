@@ -47,25 +47,10 @@ read md from project repo and import/embed it-->
   time {{site.time}}
 {% endcomment %}
 
-{% comment %}
-{% for category in site.categories %}
-  <li><a name="{{ category | first }}">{{ category | first }}</a>
-    <ul>
-    {% for posts in category %}
-      {% for post in posts %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    {% endfor %}
-    </ul>
-  </li>
-{% endfor %}
-{% endcomment %}
-
-<!-- list by date
-sort by project category that has a most recent project -->
-
 <h1>Projects</h1>
 <hr>
+<!-- list by date
+sort by project category that has a most recent project -->
 
 <!--if list size == 0
   get first cat
