@@ -1,7 +1,7 @@
 ---
 layout: project
 categories: [tips and tricks]
-tags: [diode limiter, diode clamp]
+tags: [diode tricks, sound card oscilloscope]
 permalink: /projects/tips-tricks/:title:output_ext
 hero-img: /images/projects/tips-tricks/o-scope/hero.jpg
 featured-img: /images/projects/tips-tricks/o-scope/feature.jpg  # featured image if any

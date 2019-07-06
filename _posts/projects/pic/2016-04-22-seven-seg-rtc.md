@@ -1,7 +1,7 @@
 ---
 layout: project
 categories: [PIC Projects]
-tags: [rtc, multiplex, seven segment display, persistence of vision]
+tags: [rtc, multiplex, seven segment, persistence of vision]
 permalink: /projects/pic/:title:output_ext
 hero-img: /images/projects/pic/rtc/hero.jpg
 featured-img: /images/projects/pic/rtc/feature.jpg

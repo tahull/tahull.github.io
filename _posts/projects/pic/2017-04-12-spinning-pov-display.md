@@ -1,7 +1,7 @@
 ---
 layout: project
 categories: [PIC Projects]
-tags: [rtc, rpm meter, persistence of vision, led display, spinning display]
+tags: [rtc, rpm, persistence of vision, LEDs]
 permalink: /projects/pic/:title:output_ext
 hero-img: /images/projects/pic/spinning-pov/hero.jpg
 featured-img: /images/projects/pic/spinning-pov/feature.jpg
@@ -98,7 +98,7 @@ System clock is 20 MHz, one instruction takes 4 clock cycles, instruction clock 
 
 \\[20MHz/4 = 200ns\\]
 
-With prescaler off one interrupt with this 8-bit timer will take:
+With prescaler off, one interrupt with this 8-bit timer will take:
 
 \\[256*200ns = 51.2us\\]
 
@@ -136,7 +136,7 @@ We need to know how long one rotation takes, if we know the RPM then:
 
 `Time of one rotation in ms = 60000/RPM`
 
-Or if using a millisecond counter we can easily know how long one rotation takes, then its just a matter of determining how long one degree is. In terms of micro seconds:
+Or if using a millisecond counter we can know how long one rotation takes, then its just a matter of determining how long one degree is. In terms of micro seconds:
 
 `Time of one degree = (1000us/ms) * (time of one rotation in ms) / (360 degree)`
 

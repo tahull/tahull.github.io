@@ -61,11 +61,12 @@ This traffic light simulation will simulate two one-way streets. One street has 
 
 ---
 ## Design
+{::options parse_block_html="true" /}
 <div class="row">
-  <div class="col" markdown="1">
+  <div class="col-md">
   <img src="/images/projects/pic/traffic-lights/state-graph.png" alt="image of state graph" title="state graph" class="img-fluid"/>
   </div>
-  <div class="col" markdown="1">
+  <div class="col-md">
   What are the states.
   - state0: green on north to south, red on east to west
   - state1: yellow on north to south, red on east to west
@@ -80,14 +81,14 @@ This traffic light simulation will simulate two one-way streets. One street has 
   Four states, and four transition.
   </div>
 </div>
-
+{::options parse_block_html="true" /}
 <div class="row">
-  <div class="col" markdown="1">
-  With the state graph done, its easy to build the state table. Looking at state0 (S0) if there's no input (no traffic) then the next state is S0 (main light stays green). If there's east bound traffic (0b10) then the next state will be S1 (north to south light changes to yellow). the Full transition will be S0 -> S1 -> S2 -> S2 and stay in S2 until there's no east bound traffic or if north bound traffic arrives.
+  <div class="col-md">
+With the state graph done, its easy to build the state table. Looking at state0 (S0) if there's no input (no traffic) then the next state is S0 (main light stays green). If there's east bound traffic (0b10) then the next state will be S1 (north to south light changes to yellow). the Full transition will be S0 -> S1 -> S2 -> S2 and stay in S2 until there's no east bound traffic or if north bound traffic arrives.
   </div>
-  <div class="col" markdown="1">
- <img src="/images/projects/pic/traffic-lights/state-table.png" alt="image of state table" title="state table" class="img-fluid float-right"/>
- </div>
+  <div class="col-md">
+  <img src="/images/projects/pic/traffic-lights/state-table.png" alt="image of state table" title="state table" class="img-fluid float-right"/>
+  </div>
 </div>
 
 ### Software

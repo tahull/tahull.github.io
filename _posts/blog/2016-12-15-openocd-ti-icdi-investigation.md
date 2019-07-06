@@ -13,7 +13,7 @@ The Texas Instruments ICDI, comes as a Composite USB device with a virtual com p
 
 Uninstalling the virtual com port seems to allow OpenOCD to open the ICDI interface, or using [Zadig](http://zadig.akeo.ie/) and changing the composite device host to use winusb or libusb libs is another solution. However, changing the composite host will affect the other interfaces, they will no longer show up in the device list and may be unreachable (no more VCP, no more DFU, no more JTAG) and this modification may prevent other debuggers or flash programmers from working. To revert the change the modified composite host driver needs to be removed and TI ICDI driver re-installed.
 
-Either wipe out your VCP (no virtual com port for debug messages) or modify the composite host, these two options aren't very appealing. These work-around options didn't appeal to me, so I tried to figure out why OpenOCD was failing to open the interface.
+Either wipe out your VCP (no virtual com port for debug messages) or modify the composite host. These work-around options didn't appeal to me, so I tried to figure out why OpenOCD was failing to open the interface.
 
 ### TL;DR
 - On Windows 10 TI ICDI device shows up as two devices. One that can be opened by libusb, and one that fails to be opened.
@@ -62,14 +62,18 @@ Bus 002 Device 002: ID 1cbe:00fd
 ```
 
 ## What the results mean
-The ICDI appears as two devices to libusb, the first device it finds, but cannot be opened, the second device can be opened. With the first instance of the device none of the interfaces can be claimed, but on the second instance, interface 2 and 3 can be claimed. The interface we need to connect to is the debug interface which is interface 2, on the second device handle. On inspection of OpenOCD ICDI driver code, the libusb function `libusb_open_device_with_vid_pid(h->usb_ctx, param->vid, param->pid)` is used to find the ICDI and the handle usb_ctx. The device is found, but it can't be opened with the first device handle, and so it fails.
+The ICDI appears as two devices to libusb, the first device it finds, but cannot be opened, the second device can be opened. With the first instance of the device none of the interfaces can be claimed, but on the second instance, interface 2 and 3 can be claimed. The interface we need to connect to is the debug interface which is interface 2, on the second device handle. On inspection of OpenOCD ICDI driver code, the libusb function
+```c
+libusb_open_device_with_vid_pid(h->usb_ctx, param->vid, param->pid)
+```
+is used to find the ICDI and the handle usb_ctx. The device is found, but it can't be opened with the first device handle, and so it fails.
 
 ## Making it work
 As is turns out there's already a better implementation in OpenOCD for finding a debug interface, its used by st-link driver stlink_usb.
 
 ICDI driver can easily be changed to be more like the stlink_usb driver implementation.
 
-The stlink_usb driver uses OpenOCD's libusb_common. `libusb_common.h` doesn't use libusb's function `libusb_open_device_with_vid_pid` which only searches untill the first instance. Instead a different search method is implemented in `libusb1_common.h` `(jtag_libusb_open(vids, pids, serial, &h->fd) != ERROR_OK))` which will search through all the libusb capable devices and try to to connect to the matching VID, PID or serial, if it fails on the first instance, it continues to search.
+The stlink_usb driver uses OpenOCD's libusb_common. `libusb_common.h` doesn't use libusb's function `libusb_open_device_with_vid_pid` which only searches until the first instance. Instead a different search method is implemented in `libusb1_common.h` `(jtag_libusb_open(vids, pids, serial, &h->fd) != ERROR_OK))` which will search through all the libusb capable devices and try to to connect to the matching VID, PID or serial, if it fails on the first instance, it continues to search.
 
 A modification is already proposed in the OpenOCD mailing [list (ID: 2527)](http://openocd.zylin.com/#/q/status:open) to change the ti_icdi_usb to use libusb_common, instead of using libusb directly, but at the time of doing my own testing, the change is not yet merged. Once merged this should be a non-issue for Windows users.
 

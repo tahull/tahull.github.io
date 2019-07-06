@@ -1,12 +1,12 @@
 ---
-layout: project                               #file name: year-month-day-title.md
-categories: [Android Projects]                                   # category
+layout: project                         
+categories: [Android Projects]                                
 tags: [tcp, linear layout, android design]
-permalink: /projects/android/:title:output_ext        # permalink if any
+permalink: /projects/android/:title:output_ext        
 hero-img: /images/projects/android/tcp-blinky-client/hero.png
-featured-img: /images/projects/android/tcp-blinky-client/feature.png        # featured image if any
+featured-img: /images/projects/android/tcp-blinky-client/feature.png        
 schematic-img:
-project-source: https://github.com/tahull/Android-projects/tree/master/TCP-Blinky     # sources
+project-source: https://github.com/tahull/Android-projects/tree/master/TCP-Blinky    
 use-math: false
 ---
 
