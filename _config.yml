@@ -1,7 +1,7 @@
 ---
 title: tahull
 description: > # this means to ignore newlines until "baseurl:"
-  Electronics, PCB's, projects with PIC microcontrollers, and linux woes and quick fixes
+  Electronics, PCB's, projects with PIC microcontrollers, and linux stuff
 baseurl: ""
 url: "https://tahull.github.io"
 repository: tahull/tahull.github.io
@@ -9,7 +9,7 @@ repository: tahull/tahull.github.io
 #excerpt_separator: "<!--more-->"
 
 # Custom
-current_version:      0.1.06
+current_version:      0.1.1
 
 # Build settings
 markdown: kramdown
@@ -29,6 +29,7 @@ plugins:
   - jekyll-github-metadata
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-redirect-from
 
 
 

@@ -1,18 +1,14 @@
 <header>
+  {% include navbar.html %}
   {% case page.layout %}
     {% when 'home' %}
-      {% include navbar.html %}
       <div class="jumbotron jumbotron-hero" style="background-image:url(/images/hero.jpg)">
         <h1>{{ site.title }}</h1>
         <p class="lead">{{ site.description }}</p>
       </div>
-    {% when 'projects' %}
-      {% include navbar.html %}
     {% when 'project' %}
         <div class="jumbotron jumbotron-hero" style="background-image:url({{ page.hero-img }});opacity:.8;">
           <h1>{{ page.title }}</h1>
         </div>
-    {% else %}
-      {% include navbar.html %}
   {% endcase %}
 </header>
