@@ -1,7 +1,7 @@
 ---
 layout: project
 categories: [PCB Projects]
-tags: [usb, breakout]
+tags: [pcb, usb, breakout]
 permalink: /projects/pcb/:title:output_ext
 hero-img: /images/projects/pcb/usbb/hero.jpg
 featured-img: /images/projects/pcb/usbb/feature.png

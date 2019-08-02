@@ -2,7 +2,7 @@
 layout: project                               
 categories: [PIC Projects]                                 
 tags: [traffic light simulation,LEDs, FSM, Moore machine]
-permalink: /projects/pic/:title:output_ext     
+permalink: /projects/pic/:title   
 hero-img: /images/projects/pic/traffic-lights/hero.jpg
 featured-img: /images/projects/pic/traffic-lights/feature.png
 schematic-img: /images/projects/pic/traffic-lights/sch.svg

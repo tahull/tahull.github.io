@@ -1,13 +1,14 @@
 ---
 layout: post
-categories: hacks
-tags: [openocd, hacks, parport, jtag wiggler]
-permalink: /:categories/:year/:month/:title:output_ext
-hero-img:
+categories: [windows sucks]
+tags: [windows 10, openocd, hacks, parport, jtag wiggler]
+permalink: /blog/:year/:month/:title
+redirect_from:
+  - /hacks/2016/12/openocd-with-parport-investigation.html
 featured-img: /images/blog/openocd/parport-feature.jpg
 ---
 
-Parallel ports aren't a popular port and so, don't have much support. A Windows driver giveio.sys was previously used on 32-bit Windows to support parallel port jtag device use with OpenOCD. There isn't a 64-bit version of giveio.sys. OpenOCD can't communicate with parallel port on a 64-bit windows OS using giveio.sys and results with an error: `Error: missing privileges for direct i/o`.
+Parallel ports aren't a common port anymore and so, don't have much support. A Windows driver giveio.sys was previously used on 32-bit Windows to support parallel port jtag device use with OpenOCD. There isn't a 64-bit version of giveio.sys. OpenOCD can't communicate with parallel port on a 64-bit windows OS using giveio.sys and results with an error: `Error: missing privileges for direct i/o`.
 
 There are some alternative 64-bit parallel port drivers that can be used with 64-bit windows OS. The driver I went with is InpOutx64 found here: [inpout](http://www.highrez.co.uk/downloads/inpout32/). There's a couple steps to make this work
 - Installing the driver and including the inpoutx64.dll in openocd/bin folder

@@ -1,14 +1,14 @@
 ---
 layout: post
 categories: [tips and tricks]
-tags: [pcb transfer, dual layer pcb]
-permalink: /:categories/:year/:month/:title:output_ext
+tags: [pcb, pcb transfer]
+permalink: /blog/:year/:month/:title
+redirect_from:
+  - /tips%20and%20tricks/2017/03/transfer-to-double-sided-pcb.html
 ---
 
 
 Transferring to a two layer PCB, and getting the two layers to line up right can be a pain. If its not right, vias, and through hole parts will not line up right.
-
-I've seen a few methods like cutting the layers and PCB to very specific sizes and matching up corners or guide points.
 
 This is a visual way to match up the layers. All that's needed is a bright light source, and a clean clear glass sheet elevated about the light source. Here I use some white LED's and a glass sheet salvaged from a printer/scanner.
 

@@ -1,12 +1,11 @@
 ---
 layout: post
-categories: [linux sucks]
+categories: [setup guide]
 tags: [wine, wineprefix, ubuntu 18.04, linux]
-permalink: /blog/:title
-hero-img:
+permalink: /blog/:year/:month/:title
 ---
 
-Wine is great, fill a glass, sit back, and find another reason to not boot into Windows. There's dozens of different ways to get to the same goal, and this applies to Wine in Linux. Wine lets us run built-for-windows applications on Linux. Wineprefix's lets us setup different Wine configurations, do you need 32 or 64-bit Wine, or specific runtime libraries, or do you just want to separate Windows applications. Here's one way to setup a Wineprefix, install an application and create a shortcut for it on Ubuntu 18.04.
+Wine is great, fill a glass, sit back, and find another reason to not boot into Windows. Wine lets us run built-for-windows applications on Linux. Wineprefix's lets us setup different Wine configurations, do you need 32 or 64-bit Wine, or specific runtime libraries, or do you just want to separate Windows applications. There's dozens of different ways to get to the same goal, and this applies to Wine in Linux too. Here's one way to setup Wineprefix(s), install an application and create a shortcut for it on Ubuntu 18.04.
 
 - Install Wine and Winetricks. You may or may not need Winetricks, Winetricks is the preferred way for installing redistributable runtime libraries like dotnet, vcrun, corefonts, rather than using `wine winecfg` GUI to load those extra windows things.
 
@@ -14,7 +13,7 @@ Wine is great, fill a glass, sit back, and find another reason to not boot into 
 sudo apt install wine-stable winetricks
 ```
 
-Make things easier. specify a bash variable for the Wineprefix location.
+When working with long path names make things easier. Specify a bash variable for the working path.
 
 ```bash
 prefix=$HOME/.wine/wineprefixes
