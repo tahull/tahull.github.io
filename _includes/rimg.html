@@ -1,0 +1,18 @@
+<!-- responsive image -->
+
+{% comment %} seperate file name and path from file extension {% endcomment %}
+{% assign file = include.img_path | split: '.' | pop | join: '.' %}
+{% assign ext = include.img_path | split: '.' | last %}
+
+<picture>
+<img
+srcset="{{ file }}-320.{{ ext }} 320w,
+{{ file }}-640.{{ ext }} 640w,
+{{ file }}-1024.{{ ext }} 1024w"
+sizes="(max-width:499px) 100px,
+(max-width:799px) 220pxvw,
+(max-width:999px) 220pxvw,
+64vw"
+src="{{ file }}" alt="{{ alt }}"
+{{ include.options }} />
+</picture>

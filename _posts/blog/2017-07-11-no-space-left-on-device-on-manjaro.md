@@ -5,6 +5,7 @@ tags: [No space left on device, manjaro 17.0.1, linux]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /linux%20sucks/2017/07/no-space-left-on-device.-linux-your're-lying!.html
+featured-img: /images/features/shell-feature.png
 ---
 
 One would think that if you have plenty of free disk space, you should be able to install an application, and then use it, but that would be to easy. Rather, its not really a problem of disk space, but running out of temporary space during install.

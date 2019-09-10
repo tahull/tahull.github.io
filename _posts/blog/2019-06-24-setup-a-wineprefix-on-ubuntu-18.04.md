@@ -3,6 +3,7 @@ layout: post
 categories: [setup guide]
 tags: [wine, wineprefix, ubuntu 18.04, linux]
 permalink: /blog/:year/:month/:title
+featured-img: /images/features/shell-feature.png
 ---
 
 Wine is great, fill a glass, sit back, and find another reason to not boot into Windows. Wine lets us run built-for-windows applications on Linux. Wineprefix's lets us setup different Wine configurations, do you need 32 or 64-bit Wine, or specific runtime libraries, or do you just want to separate Windows applications. There's dozens of different ways to get to the same goal, and this applies to Wine in Linux too. Here's one way to setup Wineprefix(s), install an application and create a shortcut for it on Ubuntu 18.04.
@@ -29,7 +30,7 @@ export WINEPREFIX=$prefix/tools64
 wine wineboot
 ```
 - Or create a 32-bit wineprefix.
-  - From [winehq](https://wiki.winehq.org/FAQ#How_do_I_create_a_32_bit_wineprefix_on_a_64_bit_system.3F){:target="_blank"} "At present there are some significant bugs that prevent many 32 bit applications from working in a 64 bit wineprefix."
+  - From [winehq](https://wiki.winehq.org/FAQ#How_do_I_create_a_32_bit_wineprefix_on_a_64_bit_system.3F) "At present there are some significant bugs that prevent many 32 bit applications from working in a 64 bit wineprefix."
 
 ```bash
 export WINEPREFIX=$prefix/tools32
@@ -47,7 +48,7 @@ WINEARCH=win32 wine wineboot
 
 ---
 
-For the rest of the commands I'll be using the 64-bit Wineprefix to install [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html){:target="_blank"} for this example.
+For the rest of the commands I'll be using the 64-bit Wineprefix to install [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html) for this example.
 
 - Install the application. Depending where your application installer is.
 

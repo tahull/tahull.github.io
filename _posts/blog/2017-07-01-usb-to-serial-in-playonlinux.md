@@ -5,6 +5,7 @@ tags: [linux, USB To Serial, Hercules terminal, playOnLinux, wine, ubuntu 16.04]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /linux%20sucks/2017/07/USB-to-serial-in-PlayOnLinux.html
+featured-img: /images/features/shell-feature.png
 ---
 
 There's a serial terminal I like (hardware group's Hercules terminal), which as far as I know is only available for Windows. Play On Linux makes wine easy to use. Wine makes it possibly possible to run windows applications. Play On Linux can be installed through the app store or command line easy enough.
