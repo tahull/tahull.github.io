@@ -31,6 +31,9 @@ hr {
   text-shadow: black 0.3em 0.3em 0.3em;
   height: 400px;
 }
+.side-toc{
+  top: 4em;
+}
 /*project cards*/
 .card-img-wrap img {
   transition: transform .25s;
