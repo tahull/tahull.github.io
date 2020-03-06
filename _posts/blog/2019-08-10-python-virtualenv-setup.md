@@ -64,7 +64,7 @@ pip install scipy numpy pandas
 ```
 
 ## Deactivate the virtualenv
-Close the shell or deactivate the virtualenv
+When done with the virtualenv close the shell or deactivate the virtualenv.
 ```shell
 deactivate
 ```

@@ -8,6 +8,7 @@ featured-img: /images/projects/pic/traffic-lights/feature.png
 schematic-img: /images/projects/pic/traffic-lights/sch.svg
 project-source: https://github.com/tahull/PIC-projects/tree/master/Traffic_Lights.X
 use-math: false
+project-description: "FSM"
 ---
 
 {% if page.featured-img %}
@@ -31,7 +32,7 @@ This traffic light simulation will simulate two one-way streets. One street has 
 
 ---
 ## Components
-### Hardware
+### Hardwareraffic-light-fsm
 - PIC16f1829
   - Any micriocontroller will do.
 - 6x LED's
@@ -61,6 +62,7 @@ This traffic light simulation will simulate two one-way streets. One street has 
 
 ---
 ## Design
+I think its easier to start from a state diagram, meale or moore. Then build the state table, then code.
 {::options parse_block_html="true" /}
 <div class="row">
   <div class="col-md">
