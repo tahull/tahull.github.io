@@ -7,5 +7,8 @@
   {% when 'project' %}
       <div class="jumbotron jumbotron-hero" style="background-image:url({{ page.hero-img }});opacity:.8;">
         <h1>{{ page.title }}</h1>
+        {% if page.project-description %}
+          <p> {{ page.project-description }} </p>
+        {% endif %}
       </div>
 {% endcase %}
