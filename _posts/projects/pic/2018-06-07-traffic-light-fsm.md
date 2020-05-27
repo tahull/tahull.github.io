@@ -32,7 +32,7 @@ This traffic light simulation will simulate two one-way streets. One street has 
 
 ---
 ## Components
-### Hardwareraffic-light-fsm
+### Hardware
 - PIC16f1829
   - Any micriocontroller will do.
 - 6x LED's
