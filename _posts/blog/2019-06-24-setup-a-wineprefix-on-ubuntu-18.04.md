@@ -19,10 +19,16 @@ When working with long path names make things easier. Specify a bash variable fo
 ```bash
 prefix=$HOME/.wine/wineprefixes
 ```
+
+If the path doesn't exist you may need to create it first. Tell mkdir to make directories and sub directories with -p. `-p, --parents     no error if existing, make parent directories as needed`  
+```bash
+mkdir -p $HOME/.wine/wineprefixes/
+```
+
 - Set the WINEPREFIX environment variable.
-- Use `export` so child processes have it.
-- The wine prefix name you choose should not already exist. Ill create a wineprefix named 'tools64'.
+- Use `export` so child processes have the same WINEPREFIX path.
 - Wine and Winetricks will use this specified Wineprefix for this session.
+- The wine prefix name you choose should not already exist. Ill create a wineprefix named 'tools64'.
 - Create a 64-bit Wineprefix and "start/restart" it.
 
 ```bash
@@ -30,7 +36,7 @@ export WINEPREFIX=$prefix/tools64
 wine wineboot
 ```
 - Or create a 32-bit wineprefix.
-  - From [winehq](https://wiki.winehq.org/FAQ#How_do_I_create_a_32_bit_wineprefix_on_a_64_bit_system.3F) "At present there are some significant bugs that prevent many 32 bit applications from working in a 64 bit wineprefix."
+  - From [winehq](https://wiki.winehq.org/FAQ#How_do_I_create_a_32_bit_wineprefix_on_a_64_bit_system.3F) "...there are some significant bugs that prevent many 32 bit applications from working in a 64 bit wineprefix."
 
 ```bash
 export WINEPREFIX=$prefix/tools32
