@@ -10,10 +10,21 @@ layout: compress
   <body>
     {% include header.html %}
     {% include hero.html %}
+    
+    {% if page.layout=="project" %}
+      <div class="container-fluid">
+        {{ content }}
+      </div>
+    {% else %}
+      <div class="container">
+        {{ content }}
+      </div>
+    {% endif %}
 
-    <div class="container">
-      {{ content }}
-    </div>
+
+    {% if site.disqus.shortname and page.use-disqus %}
+      {% include disqus.html %}
+    {% endif%}
 
     {% include footer.html %}
     {% include scripts.html %}

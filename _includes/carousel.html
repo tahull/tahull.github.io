@@ -1,0 +1,32 @@
+<div id="projectsCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators" style="bottom:-40px;">
+    <li data-target="#projectsCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#projectsCarousel" data-slide-to="1"></li>
+    <li data-target="#projectsCarousel" data-slide-to="2"></li>
+    <li data-target="#projectsCarousel" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox" style="width: 100%; min-height:250px; margin-bottom:50px;">
+    
+    {% assign projects = site.posts | where: "layout","project" %}
+    {% for post in projects limit:4 %}
+      {% if forloop.index == 1 %}
+      <div class="carousel-item active">
+      {% else %}
+      <div class="carousel-item">
+      {% endif %}
+        <div class="carousel-inner-recent-projects my-2" style="overflow:auto;">
+        {% if post.featured-img %}
+        <picture>
+          <source media="(min-width: 850px)" srcset="{{ post.featured-img }}" />
+          <source media="(min-width: 650px)" srcset="{{ post.featured-img | replace: '.', '-medium.' }}" />
+          <img src="{{ post.featured-img | replace: '.', '-small.' }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="rounded float-left mr-2">
+        </picture>
+        {% endif %}
+          <h3>{{post.title}}</h3>
+        {{ post.excerpt | strip_html | truncate: 450 }}
+          <a href="{{ post.url }}">Read the full post! &raquo</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

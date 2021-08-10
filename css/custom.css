@@ -8,7 +8,6 @@ body {
   margin-top: 56px;
   padding-bottom: 20px;
   margin-bottom: 150px;
-  /*border: 1px solid red;*/
 }
 footer {
   position: absolute;
@@ -16,7 +15,6 @@ footer {
   width: 100%;
   padding-top: 10px;
   min-height: 60px;
-  /*height: 100px;*/
 }
 hr {
 	background-color: grey;
@@ -31,8 +29,21 @@ hr {
   text-shadow: black 0.3em 0.3em 0.3em;
   height: 400px;
 }
-.side-toc{
+.toc{
   top: 4em;
+  border: 1px solid;
+  border-color: grey;
+  margin: 0;
+  font-size: 95%;
+  margin-bottom: 20px;
+}
+.toc ul{
+  padding-right: 5px;
+  padding-left: 20px;
+  margin: 0;
+}
+.container-project{
+  max-width: 1140px;
 }
 /*project cards*/
 .card-img-wrap img {
@@ -45,7 +56,6 @@ hr {
 /* room for paragraph/posts with inline images */
 p, ul{
   overflow:auto;
-  /*border: 1px solid red;*/
 }
 /* room for navbar/toc */
 h1[id],

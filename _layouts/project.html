@@ -2,75 +2,16 @@
 layout: default
 ---
 
-
-<div data-spy="scroll" data-target=".navbar" data-offset="50">
-  {% comment %}
-  <h1>{{ page.title }}</h1>
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{{ site.baseurl }}/projects.html">Projects</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#project-nav" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="project-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item nav-link ml-auto"><a href="#">{{ page.title }}</a></li>
-        {% include toc.html sanitize=true html=content h_min=2 h_max=2 class="navbar-nav.ml-auto" item_class="nav-item.nav-link" %}
-        </ul>
-      </div>
-    </div>
-  </nav>
-  {% endcomment %}
-{% comment %}
-  <nav class="navbar navbar-expand-xl navbar-dark sticky-top" style="padding-top:60px;border: 1px solid red;">
-
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#main-nav2">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="main-nav2">
-        <ul class="navbar-nav ml-auto">
-          <!-- links -->
-          <li class="nav-item">
-            <a class="nav-link" href="{{ "/projects.html" | relative_url }}">Projects</a>
-          </li>
-          <!-- github -->
-          <li class="nav-item">
-            <a class="nav-link" href="{{ site.github.owner_url }}">
-              <i class="fab fa-fw fa-github fa-lg"></i>Github</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link">Right Link 1</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">            Dropdown on Right</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action with a lot of text inside of an item</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-  </nav>
-  {{ content }}
-{% endcomment %}
-
-
-  <div class="row">
+<div class="row">
     <div class="col-md-auto">
-       <div class="sticky-top side-toc">
+      <div class="sticky-top toc">
         {% include toc.html html=content h_min=2 h_max=3 %}
       </div>
     </div>
     <div class="col">
+      <div class="container-project">
         {{ content }}
+      </div>
     </div>
   </div>
-
-  {% if jekyll.environment == 'production' and site.disqus.shortname %}
-    {% include disqus.html %}
-  {% endif %}
 </div>

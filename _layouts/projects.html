@@ -1,109 +1,67 @@
 ---
 layout: default
 ---
-{% comment %}
-<h4 style="padding-top: 10px;">Recent Projects</h4>
-<div id="projectsCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators" style="bottom:-40px;">
-    <li data-target="#projectsCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#projectsCarousel" data-slide-to="1"></li>
-    <li data-target="#projectsCarousel" data-slide-to="2"></li>
-    <li data-target="#projectsCarousel" data-slide-to="3"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox" style="width: 100%; min-height:250px; margin-bottom:50px;">
-    {% comment %}
-    {% assign sorted = site.posts | where_exp:"post", "post.path contains 'projects'" %}
-    {% endcomment %}
-    {% assign projects = site.posts | where: "layout","project" %}
-    {% for post in projects limit:4  %}
-      {% if forloop.index == 1 %}
-      <div class="carousel-item active">
-      {% else %}
-      <div class="carousel-item">
-      {% endif %}
-        <div class="carousel-inner-recent-projects my-2" style="overflow:auto;">
-        {% if post.featured-img %}
-          <img src="{{ post.featured-img }}" alt="image of {{ post.title }}" title = "{{ post.title }}" class="mr-3 mb-3" style="float:left; max-height:12rem;">
+
+<div class="container">
+  <!-- sort and display project list -->
+  <h1>Projects</h1>
+  <hr>
+  <!-- list by date
+  sort by project category that has a most recent project -->
+
+  <!--if list size == 0
+    get first cat
+  else
+    compare current cat to list
+      if item found
+        add = false
+      else
+        add = true
+    if add == true
+      add this cat-->
+  {% assign projects = site.posts | where: "layout","project" %}
+  {% assign array_of_cats = ''|split:''%}
+  {% for project in projects  %}
+    {% if array_of_cats.size == 0 %}
+      {% assign array_of_cats = array_of_cats|push:project.categories%}
+    {% else %}
+      {% assign new_cat = true %}
+      {% for item in array_of_cats%}
+        {% if item == project.categories %}
+          {% assign new_cat = false %}
         {% endif %}
-          <h3>{{post.title}}</h3>
-        {{ post.excerpt | strip_html | truncate: 500 }}
-          <a href="{{ post.url }}">Read the full post! &raquo</a>
+      {% endfor %}
+      {% if new_cat == true %}
+        {% assign array_of_cats = array_of_cats|push:project.categories%}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- print project cards -->
+  {% for category in array_of_cats %}
+    <h4>{{category[0]}}</h4>
+    <div class="row">
+    {% assign projects_by_category = projects | where:"categories",category[0] %}
+    {% for project in projects_by_category  %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-6 my-3">
+        <div class="card border-dark bg-dark" style="height:100%; text-shadow: black 0.3em 0.3em 0.3em;">
+          <a class="text-white" href="{{ project.url }}">
+          {% if project.featured-img %}
+            <div class = "card-img-wrap" style="overflow: hidden; position: relative;">
+              <img class="card-img" src="{{ project.featured-img }}" alt="image of {{ project.title }}" title = "{{ project.title }}" style="opacity: .85;">
+              <div class="card-img-overlay">
+          {% else %}
+            <div class="card-body">
+          {% endif %}
+                <h4 class="card-title"><small>{{project.title}}</small></h4>
+              </div>
+          {% if project.featured-img %}
+            </div>
+          {% endif %}
+          </a>
         </div>
       </div>
     {% endfor %}
-  </div>
-</div>
-{% endcomment %}
-
-<!--TODO generate tree list or table of projects
-read md from project repo and import/embed it-->
-{% comment %}
-  {% for repository in site.github.public_repositories %}
-   {% if repository.name contains "projects" %}
-    <h3><a href="{{ repository.html_url }}">{{ repository.name  }}</a></h3>
-    {% endif %}
-  {% endfor %}
-  <br>
-  time {{site.time}}
-{% endcomment %}
-
-<h1>Projects</h1>
-<hr>
-<!-- list by date
-sort by project category that has a most recent project -->
-
-<!--if list size == 0
-  get first cat
-else
-  compare current cat to list
-    if item found
-      add = false
-    else
-      add = true
-  if add == true
-    add this cat-->
-{% assign projects = site.posts | where: "layout","project" %}
-{% assign array_of_cats = ''|split:''%}
-{% for project in projects  %}
-  {% if array_of_cats.size == 0 %}
-    {% assign array_of_cats = array_of_cats|push:project.categories%}
-  {% else %}
-    {% assign new_cat = true %}
-    {% for item in array_of_cats%}
-      {% if item == project.categories %}
-        {% assign new_cat = false %}
-      {% endif %}
-    {% endfor %}
-    {% if new_cat == true %}
-      {% assign array_of_cats = array_of_cats|push:project.categories%}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-<!-- print project cards -->
-{% for category in array_of_cats %}
-  <h4>{{category[0]}}</h4>
-  <div class="row">
-  {% assign projects_by_category = projects | where:"categories",category[0] %}
-  {% for project in projects_by_category  %}
-    <div class="col-lg-3 col-md-4 col-sm-6 col-6 my-3">
-      <div class="card border-dark bg-dark" style="height:100%; text-shadow: black 0.3em 0.3em 0.3em;">
-        <a class="text-white" href="{{ project.url }}">
-        {% if project.featured-img %}
-          <div class = "card-img-wrap" style="overflow: hidden; position: relative;">
-            <img class="card-img" src="{{ project.featured-img }}" alt="image of {{ project.title }}" title = "{{ project.title }}" style="opacity: .85;">
-            <div class="card-img-overlay">
-        {% else %}
-          <div class="card-body">
-        {% endif %}
-              <h4 class="card-title"><small>{{project.title}}</small></h4>
-            </div>
-        {% if project.featured-img %}
-          </div>
-        {% endif %}
-        </a>
-      </div>
     </div>
   {% endfor %}
-  </div>
-{% endfor %}
+</div>
