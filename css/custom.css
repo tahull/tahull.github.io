@@ -42,6 +42,10 @@ hr {
   padding-left: 20px;
   margin: 0;
 }
+video {
+  max-width: 100%;
+  height: auto;
+}
 .container-project{
   max-width: 1140px;
 }
@@ -66,6 +70,9 @@ h4[id]{
     margin-top: -60px;
 }
 /*highlight*/
+.highlight {
+  padding-left:5px;
+}
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .cm {
@@ -85,7 +92,7 @@ h4[id]{
   font-weight: bold;
   font-style: italic;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #999988;
   font-style: italic;
 }
@@ -172,6 +179,10 @@ h4[id]{
 .highlight .m, .highlight .mb, .highlight .mx {
   color: #009999;
 }
+.highlight .sa {
+  color: #000000;
+  font-weight: bold;
+}
 .highlight .sb {
   color: #d14;
 }
@@ -205,7 +216,7 @@ h4[id]{
 .highlight .ss {
   color: #990073;
 }
-.highlight .s {
+.highlight .s, .highlight .dl {
   color: #d14;
 }
 .highlight .na {
@@ -235,7 +246,7 @@ h4[id]{
   color: #990000;
   font-weight: bold;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #990000;
   font-weight: bold;
 }
@@ -258,7 +269,7 @@ h4[id]{
 .highlight .vi {
   color: #008080;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #008080;
 }
 .highlight .ow {
