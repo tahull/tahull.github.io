@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [linux sucks]
-tags: [wine, linux, sound card oscilloscope, ubuntu 18.04]
+categories: [Linux Sucks]
+tags: [Wine, Linux, Sound Card Oscilloscope, Ubuntu 18.04]
 permalink: /blog/:year/:month/:title
 ---
 

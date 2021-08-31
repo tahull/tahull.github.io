@@ -1,7 +1,7 @@
 ---
 layout: project                         
 categories: [Android Projects]                                
-tags: [tcp, linear layout, android design]
+tags: [TCP, Linear Layout, Android Design]
 permalink: /projects/android/:title:output_ext        
 hero-img: /images/projects/android/tcp-blinky-client/hero.png
 featured-img: /images/projects/android/tcp-blinky-client/feature.png        
@@ -10,7 +10,7 @@ project-source: https://github.com/tahull/Android-projects/tree/master/TCP-Blink
 use-math: false
 ---
 
-
+## Intro
 A simple client to test TCP communication to an Ethernet PIC project.
 
 <img src="/images/projects/android/tcp-blinky-client/slide-show.gif" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid"/>

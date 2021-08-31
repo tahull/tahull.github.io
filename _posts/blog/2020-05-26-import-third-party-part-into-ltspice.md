@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [tips and tricks]
+categories: [Tips And Tricks]
 tags: [LTspice]
 permalink: /blog/:year/:month/:title
 ---

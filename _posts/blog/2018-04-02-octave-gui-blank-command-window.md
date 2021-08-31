@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [linux sucks]
-tags: [octave, ubuntu 16.04, linux]
+categories: [Linux Sucks]
+tags: [Octave, Ubuntu 16.04, Linux]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /linux%20sucks/2018/04/octave-gui-blank-command-window.html

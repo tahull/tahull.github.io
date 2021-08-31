@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [tips and tricks]
-tags: [pcb, pcb transfer]
+categories: [Tips And Tricks]
+tags: [PCB, PCB Transfer]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /tips%20and%20tricks/2017/03/multiple-pcb-layouts-on-one-page.html

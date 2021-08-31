@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [setup guide]
-tags: [linux, USB To Serial, Hercules terminal, playOnLinux, wine, ubuntu 16.04]
+categories: [Setup Guide]
+tags: [Linux, USB To Serial, Hercules Terminal, PlayOnLinux, Wine, Ubuntu 16.04]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /linux%20sucks/2017/07/USB-to-serial-in-PlayOnLinux.html

@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [windows sucks]
-tags: [windows 10, openocd, hacks, parport, jtag wiggler]
+categories: [Windows Sucks]
+tags: [Windows 10, Openocd, Hacks, Parport, JTAG Wiggler]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /hacks/2016/12/openocd-with-parport-investigation.html

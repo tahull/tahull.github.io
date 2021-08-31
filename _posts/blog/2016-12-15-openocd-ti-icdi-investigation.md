@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [windows sucks]
-tags: [windows 10, openocd, hacks, ti-icdi]
+categories: [Windows Sucks]
+tags: [Windows 10, Openocd, Hacks, TI-ICDI]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /hacks/2016/12/openocd-ti-icdi-investigation.html

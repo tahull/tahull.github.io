@@ -1,7 +1,7 @@
 ---
 layout: project
 categories: [PIC Projects]
-tags: [rtc, multiplex, seven segment, persistence of vision]
+tags: [RTC, Multiplex, Seven Segment, Persistence Of Vision]
 permalink: /projects/pic/:title:output_ext
 hero-img: /images/projects/pic/rtc/hero.jpg
 featured-img: /images/projects/pic/rtc/feature.jpg
@@ -9,6 +9,7 @@ schematic-img: /images/projects/pic/rtc/sch.png
 project-source: https://github.com/tahull/PIC-projects/tree/master/Seven_Seg_RTC.X
 ---
 
+## Intro
 <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" style="float:left;"/>
 This is a simple RTC project displaying numbers to multiplexed seven segment displays. Multiplexing combined with persistence of vision takes advantage of fast processing and slow human eyes, while using a minimal amount of signal lines to control multiple displays. At any point in time only one display is active, but cycling through the displays fast enough, gives the appearance all displays are active.
 

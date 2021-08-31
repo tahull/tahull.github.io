@@ -1,13 +1,13 @@
 ---
 layout: post
-categories: [DSP]
-tags: [py notebook, python, ACF, Autocorrelation, guitar tuner]
+categories: [Jupyter Notebook, DSP]
+tags: [Python, ACF, Autocorrelation, Guitar Tuner]
 permalink: /blog/:year/:month/:title
 use-math: true
+project-source: https://github.com/tahull/py-notebooks/blob/master/py-dsp/acf-animated.ipynb
 ---
-
-Autocorrelation can be used as a pitch detection algorithm (PDA). Pitch is another term for the fundamental frequency of a periodic signal. 
-Autocorrelation is a measure of a signal's similarity to itself at lagged points. By shifting a copy of the source signal over itself we can see the measure of similarity at periodic points. A significant peak in the Autocorrelation result can indicate the pitch, but watch out for harmonics.
+## Autocorrelation
+Autocorrelation is a measure of a signal's similarity to itself at lagged points. By shifting a copy of the source signal over itself we can see the measure of similarity at periodic points. Autocorrelation can be used as a pitch detection algorithm (PDA). Pitch is another term for the frequency of a sound wave. A significant peak in the Autocorrelation result can indicate the fundamental frequency/pitch, but watch out for harmonics.
 
 
 ```python
@@ -18,9 +18,10 @@ from matplotlib.animation import FuncAnimation
 from IPython.display import HTML
 ```
 
-The autocorrelation function:
-\\[ r[k] = \frac{1}{N} \sum_{j=1}^{N-k} x[j]x[j+k] \\]
-can be implemented as:
+## Autocorrelation function:
+\$$ r[k] = \frac{1}{N} \sum_{j=1}^{N-k} x[j]x[j+k] \$$
+ACF can be implemented as:
+
 
 ```python
 def acf(x):
@@ -33,9 +34,9 @@ def acf(x):
     return r
 ```
 
-Adding some signal data. `e2`(below) is `256` samples of an `E2` note (82.4 hz) at a sampling rate of `3874 hz`. Signals from fixed point instruments tend to look somewhat messy. It's not a pure fundamental `82 hz` sine wave, but a combination of it's fundamental and harmonic signals.
+Adding some signal data. **e2 (below)** is **256** samples of an **E2 note (82.4 hz)** at a sampling rate of **3874 hz**. Signals from fixed point instruments tend to look somewhat messy. It's not a pure fundamental **82.4 hz** sine wave, but a combination of it's fundamental and harmonic signals.
 
-From the sample length and sampling frequency, build the time axis `t`
+From the sample length and sampling frequency, build the time axis **t**
 
 
 ```python
@@ -45,6 +46,8 @@ l = len(e2)/fs
 t = np.arange(0,l,1.0/fs) 
 res = acf(e2)
 ```
+
+## Animation function
 
 
 ```python
@@ -3473,7 +3476,8 @@ ACWpdG9vAAAAHWRhdGEAAAABAAAAAExhdmY1OC43Ni4xMDA=
 
 
 
-Lag points with significant overlap in the source signal and copy are points of interest and in an autocorrelation result these show up as high peaks. There is a lot of overlap of the signal and lagged signal at `lag=47`, and repeats again about every +47 lags for this source signal at this sample frequency. Normalizing the Lagged point with the sample frequency gives us the frequency at this point. The source is a `82.4 hz` signal and the result does agree.
+## Understanding the result
+Lag points with significant overlap in the source signal and copy are points of interest; in an autocorrelation result these show up as high peaks. There is a lot of overlap of the signal and lagged signal at **lag=47**, and repeats periodically about every **+47 lags** for this source signal at this sample frequency. Normalizing the Lagged point with the sample frequency gives us the frequency at this point. The source is a **82.4 hz** signal and the result does agree.
 \\(f = fs/47\\)
 
 
@@ -3484,6 +3488,10 @@ print("3874/47 =",fs/47)
     3874/47 = 82.42553191489361
 
 
-This sampling frequency worked out nicely to land on `82.4 hz` but consider if this note was out of tune at `79.9 hz`. The nearest discrete point would be 48 (`80.7083 hz`). Or if the note was just a little out of tune at `82.0 hz`. At this sample frequency, it would always find the result of `82.4 hz`. This isnt quite good enough to work as a guitar tuner at this sample frequency.
+## Harmonics
+There are some lesser peaks, the first peak is around **lag=16** which is the influence of the third harmonic \\(f_3\\) and will repeat about every **+16 lags**. The second harmonic \\(f_2\\) is around **lag=23** but isn't a peak in this case. Harmonics can show up as a change in slope or a trough or a peak and sometimes be a problem when doing simple peak detection in Autocorrelation techniques. The Harmonic problem is something the watch out for.
 
-A higher sampling frequency would increase accuracy, there's also techniques to figure out the actual peak of a curve between discrete points like parabolic interpolation.
+## Sampling frequency and accuracy
+This sampling frequency worked out nicely to land on **82.4 hz** but consider if this note was out of tune at **79.9 hz**. The nearest discrete point would be **lag=48 or (80.7083 hz)**. Or if the note was just a little out of tune at **82.0 hz**. At this sample frequency, it would always find the result of **82.4 hz**. This isn't quite good enough to work as a guitar tuner at this sample frequency.
+
+A higher sampling frequency would increase accuracy, there's also techniques to figure out the peak of a curve between discrete points like parabolic interpolation.

@@ -1,13 +1,14 @@
 ---
 layout: project       #file name: year-month-day-title.md
 categories: [Lego Projects]
-tags: [flood fill, Lego Mindstorm, micromouse]
+tags: [Flood Fill, Lego Mindstorm, Micromouse]
 permalink: /projects/lego/:title:output_ext            # permalink if any
 hero-img: /images/projects/lego/mouse/hero.jpg
 featured-img: /images/projects/lego/mouse/feature.png        # featured image if any
 project-source: https://github.com/tahull/LegoMicroMouse      # sources
 ---
 
+## Intro
 <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid" class="mr-3" align="left"/>
 This was an in-class project I had. The focus in this project was meant to be more on the flood fill algorithm than hardware design, so the Lego Mindstorm platform was provided in the class. The Lego Mindstorm platform is well suited for quickly creating hardware but with limited component choices. Simply choose from the available sensors, actuators, motors and snap them together in the desired configuration.
 A micro-mouse is a robotic maze solver, like its flesh and blood counterpart a mouse or rat in a maze. Instead of looking for food in the maze the robotic version searches for the goal, the center of the maze. A typical maze would be 16x16, but for the purposes of saving space, the class competition was held on a 5x5 maze. This project could be extended to a 16x16 maze by changing the #define MAZE_WIDTH and MAZE_HEIGHT to 16 and 16 respectively.

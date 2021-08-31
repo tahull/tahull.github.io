@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [setup guide]
-tags: [wine, wineprefix, ubuntu 18.04, linux]
+categories: [Setup Guide]
+tags: [Wine, Wineprefix, Ubuntu 18.04, Linux]
 permalink: /blog/:year/:month/:title
 featured-img: /images/features/shell-feature.png
 ---

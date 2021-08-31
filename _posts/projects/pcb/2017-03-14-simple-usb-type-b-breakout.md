@@ -1,7 +1,7 @@
 ---
 layout: project
 categories: [PCB Projects]
-tags: [pcb, usb, breakout]
+tags: [PCB, USB, Breakout]
 permalink: /projects/pcb/:title:output_ext
 hero-img: /images/projects/pcb/usbb/hero.jpg
 featured-img: /images/projects/pcb/usbb/feature.png
@@ -9,6 +9,7 @@ schematic-img: /images/projects/pcb/usbb/sch.png
 project-source: https://github.com/tahull/Eagle-projects/tree/master/usbbreakout
 ---
 
+## Intro
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" style="float:left;"/>{% endif %}
 There's not a whole lot to this project. A easy way to get a USB connection from one device to another is to chop up a USB cable, but I prefer a modular breadboard friendly component. The four small pins of a USB type B connector wont easily connect to a bread board, hence breakout board.

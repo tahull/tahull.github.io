@@ -1,7 +1,7 @@
 ---
 layout: project
-categories: [tips and tricks]
-tags: [diode tricks, hacks, sound card oscilloscope]
+categories: [Tips And Tricks]
+tags: [Diode Tricks, Hacks, Sound Card Oscilloscope]
 permalink: /projects/tips-tricks/:title:output_ext
 hero-img: /images/projects/tips-tricks/o-scope/hero.jpg
 featured-img: /images/projects/tips-tricks/o-scope/feature.jpg  # featured image if any
@@ -9,6 +9,7 @@ schematic-img: /images/projects/tips-tricks/o-scope/sch.png
 project-source:                               # sources
 ---
 
+## Intro
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" align="left"/>{% endif %}
 An oscilloscope is a valuable piece of test equipment that can help in analyzing signals. It helps to be able to see what is happening with a signal in terms of voltage and time.

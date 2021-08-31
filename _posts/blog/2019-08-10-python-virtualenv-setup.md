@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [setup guide]
-tags: [virtualenv, linux, python, ubuntu 18.04]
+categories: [Setup Guide]
+tags: [Virtualenv, Linux, Python, Ubuntu 18.04]
 permalink: /blog/:year/:month/:title
 featured-img: /images/features/shell-feature.png
 ---

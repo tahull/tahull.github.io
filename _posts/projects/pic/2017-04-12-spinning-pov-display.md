@@ -1,7 +1,7 @@
 ---
 layout: project
 categories: [PIC Projects]
-tags: [rtc, rpm, persistence of vision, LEDs]
+tags: [RTC, RPM Meter, Persistence Of Vision, LEDs]
 permalink: /projects/pic/:title:output_ext
 hero-img: /images/projects/pic/spinning-pov/hero.jpg
 featured-img: /images/projects/pic/spinning-pov/feature.jpg
@@ -10,6 +10,7 @@ project-source: https://github.com/tahull/PIC-projects/tree/master/SpinningPOV.X
 use-math: true
 ---
 
+## Intro
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" align="left"/>{% endif %}
 These things are fun to put together and interesting how a single line of LEDs moving fast enough, can trick our eyes into seeing more. This is the effect of Persistence Of Vision.

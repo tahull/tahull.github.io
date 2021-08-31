@@ -1,7 +1,7 @@
 ---
 layout: project                               
 categories: [PIC Projects]                                 
-tags: [traffic light simulation,LEDs, FSM, Moore machine]
+tags: [Traffic Light Simulation,LEDs, FSM, Moore Machine]
 permalink: /projects/pic/:title   
 hero-img: /images/projects/pic/traffic-lights/hero.jpg
 featured-img: /images/projects/pic/traffic-lights/feature.png
@@ -11,6 +11,7 @@ use-math: false
 project-description: "FSM"
 ---
 
+## Intro
 {% if page.featured-img %}
   <img src="{{ page.featured-img }}" alt="image of {{ page.title }}" title = "{{ page.title }}" class="img-fluid mr-3" align="left"/>{% endif %}
 Traffic light simulation is a classic text book problem used to demonstrate a finite state machine. A FSM is a system with finite states, finite inputs, finite outputs. It has a known number of states, inputs, and outputs. You can join team Mealy or team Moore, sometimes it matter, either way everybody wins, and you can switch teams in most cases. The state machine implementation in this project is an example of a Moore machine. Output depends on the current state and the next state depends on current state and input.

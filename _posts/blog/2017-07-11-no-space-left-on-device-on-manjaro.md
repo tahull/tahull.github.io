@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [linux sucks]
-tags: [No space left on device, manjaro 17.0.1, linux]
+categories: [Linux Sucks]
+tags: [No Space Left On Device, Manjaro 17.0.1, Linux]
 permalink: /blog/:year/:month/:title
 redirect_from:
   - /linux%20sucks/2017/07/no-space-left-on-device.-linux-your're-lying!.html
