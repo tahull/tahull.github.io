@@ -12,3 +12,8 @@ layout: default
 
 {{ content }}
 
+
+{% if page.project-source %}
+  <h2>Source files</h2>
+  <a href="{{ page.project-source }}">{{page.title}}</a>
+{% endif %}
